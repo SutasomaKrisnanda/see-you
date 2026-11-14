@@ -6,7 +6,34 @@
  * Tokens are random 128-bit identifiers; regenerate/keep them private before deployment.
  */
 
-import type { RecipientData } from './types';
+import type { RecipientData, MemoryPhoto } from './types';
+import memDsc1909 from '@/assets/images/memory/DSC01909.webp';
+import memS6234123 from '@/assets/images/memory/S__6234123.webp';
+import memLineAlbum from '@/assets/images/memory/LINE_ALBUM_Say HI MAU 24 October 2026_261115_1.webp';
+import memDsc1885 from '@/assets/images/memory/DSC01885.webp';
+
+export const DEFAULT_MEMORIES: MemoryPhoto[] = [
+  {
+    src: memDsc1909,
+    alt: 'Momen kebersamaan tim Chronicle',
+    caption: 'Momen kebersamaan dan tawa bersama tim',
+  },
+  {
+    src: memS6234123,
+    alt: 'Dokumentasi kegiatan magang',
+    caption: 'Setiap langkah kecil yang kita lalui bersama',
+  },
+  {
+    src: memLineAlbum,
+    alt: 'Kenangan Say HI MAU',
+    caption: 'Hangatnya cerita dan kebersamaan di kegiatan',
+  },
+  {
+    src: memDsc1885,
+    alt: 'Potret perjalanan magang',
+    caption: 'Kenangan yang akan selalu membekas di hati',
+  },
+];
 
 // ---------------------------------------------------------------------------
 // 1. Putu Sebastian Artanda Putra
@@ -118,7 +145,7 @@ export const RECIPIENT_SEBAS: RecipientData = {
       message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Zahra belum diisi.]",
     },
   ],
-  memories: [],
+  memories: DEFAULT_MEMORIES,
   videoNote: undefined,
   closing: {
     headline: 'Sampai jumpa di bab berikutnya.',
@@ -238,7 +265,7 @@ export const RECIPIENT_KIA: RecipientData = {
       message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Zahra belum diisi.]",
     },
   ],
-  memories: [],
+  memories: DEFAULT_MEMORIES,
   videoNote: undefined,
   closing: {
     headline: 'Sampai jumpa di bab berikutnya.',
@@ -357,7 +384,7 @@ export const RECIPIENT_HANIF: RecipientData = {
       message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Zahra belum diisi.]",
     },
   ],
-  memories: [],
+  memories: DEFAULT_MEMORIES,
   videoNote: undefined,
   closing: {
     headline: 'Sampai jumpa di bab berikutnya.',
@@ -477,7 +504,7 @@ export const RECIPIENT_ADI: RecipientData = {
       message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Zahra belum diisi.]",
     },
   ],
-  memories: [],
+  memories: DEFAULT_MEMORIES,
   videoNote: undefined,
   closing: {
     headline: 'Sampai jumpa di bab berikutnya.',
@@ -597,7 +624,7 @@ export const RECIPIENT_NITA: RecipientData = {
       message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Zahra belum diisi.]",
     },
   ],
-  memories: [],
+  memories: DEFAULT_MEMORIES,
   videoNote: undefined,
   closing: {
     headline: 'Sampai jumpa di bab berikutnya.',
@@ -717,7 +744,7 @@ export const RECIPIENT_YOGA: RecipientData = {
       message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Zahra belum diisi.]",
     },
   ],
-  memories: [],
+  memories: DEFAULT_MEMORIES,
   videoNote: undefined,
   closing: {
     headline: 'Sampai jumpa di bab berikutnya.',
@@ -837,7 +864,7 @@ export const RECIPIENT_WAH_ANGGA: RecipientData = {
       message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Zahra belum diisi.]",
     },
   ],
-  memories: [],
+  memories: DEFAULT_MEMORIES,
   videoNote: undefined,
   closing: {
     headline: 'Sampai jumpa di bab berikutnya.',
