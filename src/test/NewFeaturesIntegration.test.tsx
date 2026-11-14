@@ -2,6 +2,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { render, screen, fireEvent, act } from '@testing-library/react';
 import App from '../App';
 import Topbar from '../components/navigation/Topbar';
+import Envelope from '../components/envelope/Envelope';
 import Story from '../components/story/Story';
 import { RECIPIENT_NADYA } from '../data/recipients';
 
@@ -195,5 +196,48 @@ describe('New Features & Indonesian Localization Integration Tests', () => {
 
     const readAgainBtn = screen.getByTestId('read-again');
     expect(readAgainBtn).toHaveTextContent(/baca dari awal/i);
+  });
+
+  describe('Personalized Envelope Flower Rendering', () => {
+    it('renders only matahari (bouquet-left) for recipients assigned sunflower (Adi, Yoga, Wah Angga, Sebas)', () => {
+      const { container } = render(
+        <Envelope
+          recipientName="Putu Sebastian Artanda Putra"
+          isOpened={false}
+          onOpen={() => {}}
+          flower="matahari"
+        />
+      );
+
+      expect(container.querySelector('.bouquet-left')).toBeInTheDocument();
+      expect(container.querySelector('.bouquet-right')).toBeNull();
+    });
+
+    it('renders only carnation (bouquet-right) for recipients assigned carnation (Nita, Zakia)', () => {
+      const { container } = render(
+        <Envelope
+          recipientName="Zakia Azzahra Citra"
+          isOpened={false}
+          onOpen={() => {}}
+          flower="carnation"
+        />
+      );
+
+      expect(container.querySelector('.bouquet-right')).toBeInTheDocument();
+      expect(container.querySelector('.bouquet-left')).toBeNull();
+    });
+
+    it('renders neither flower behind envelope when recipient has no assigned flower (Hanif)', () => {
+      const { container } = render(
+        <Envelope
+          recipientName="Muhamad Hanif Pardi"
+          isOpened={false}
+          onOpen={() => {}}
+        />
+      );
+
+      expect(container.querySelector('.bouquet-left')).toBeNull();
+      expect(container.querySelector('.bouquet-right')).toBeNull();
+    });
   });
 });

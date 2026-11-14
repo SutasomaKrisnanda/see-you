@@ -21,6 +21,7 @@ export const RECIPIENT_SEBAS: RecipientData = {
     background: '#F7F3EA',
     accent: '#687B61',
   },
+  flower: 'matahari',
   greeting: {
     headline: "Hello, Sebas!",
     quote: 'Setiap pertemuan meninggalkan cerita yang layak dikenang.',
@@ -140,6 +141,7 @@ export const RECIPIENT_KIA: RecipientData = {
     background: '#F7F3EA',
     accent: '#687B61',
   },
+  flower: 'carnation',
   greeting: {
     headline: "Hello, Kia!",
     quote: 'Setiap pertemuan meninggalkan cerita yang layak dikenang.',
@@ -378,6 +380,7 @@ export const RECIPIENT_ADI: RecipientData = {
     background: '#F7F3EA',
     accent: '#687B61',
   },
+  flower: 'matahari',
   greeting: {
     headline: "Hello, Adi!",
     quote: 'Setiap pertemuan meninggalkan cerita yang layak dikenang.',
@@ -497,6 +500,7 @@ export const RECIPIENT_NITA: RecipientData = {
     background: '#F7F3EA',
     accent: '#687B61',
   },
+  flower: 'carnation',
   greeting: {
     headline: "Hello, Nita!",
     quote: 'Setiap pertemuan meninggalkan cerita yang layak dikenang.',
@@ -616,6 +620,7 @@ export const RECIPIENT_YOGA: RecipientData = {
     background: '#F7F3EA',
     accent: '#687B61',
   },
+  flower: 'matahari',
   greeting: {
     headline: "Hello, Yoga!",
     quote: 'Setiap pertemuan meninggalkan cerita yang layak dikenang.',
@@ -735,6 +740,7 @@ export const RECIPIENT_WAH_ANGGA: RecipientData = {
     background: '#F7F3EA',
     accent: '#687B61',
   },
+  flower: 'matahari',
   greeting: {
     headline: "Hello, Wah Angga!",
     quote: 'Setiap pertemuan meninggalkan cerita yang layak dikenang.',
@@ -855,6 +861,7 @@ export const RECIPIENT_NADYA: RecipientData = {
     background: '#F7F3EA',
     accent: '#687B61',
   },
+  flower: ['carnation', 'matahari'],
   greeting: {
     headline: 'Surat untuk Nadya',
     quote: 'Setiap akhir perjalanan adalah awal dari petualangan baru yang menanti.',

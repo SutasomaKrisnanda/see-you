@@ -328,6 +328,7 @@ button:focus-visible {
   inset: 0;
   background: #ddd1b9;
   border-radius: 4px;
+  z-index: 1;
 }
 
 .envelope-letter {
@@ -345,8 +346,13 @@ button:focus-visible {
   font-style: italic;
   color: var(--olive);
   font-size: 22px;
-  transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease;
   box-shadow: 0 4px 12px rgba(41, 56, 47, 0.08);
+  z-index: 2;
+}
+
+.envelope.is-opening .envelope-letter {
+  z-index: 2;
 }
 
 .envelope-front {
@@ -355,6 +361,7 @@ button:focus-visible {
   background: #e9dfca;
   clip-path: polygon(0 0, 50% 55%, 100% 0, 100% 100%, 0 100%);
   border-radius: 4px;
+  z-index: 3;
 }
 
 .envelope-flap {
@@ -363,43 +370,61 @@ button:focus-visible {
   background: #d4c8ad;
   clip-path: polygon(0 0, 100% 0, 50% 58%);
   transform-origin: top;
-  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
-  z-index: 2;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 4;
 }
 
-/* Requirement 3: Enlarged Wax Seal with Komnasinfo Logo */
+/* When opening or opened, the flap flips backward and drops behind the letter */
+.envelope.is-opening .envelope-flap,
+.opener-layer.is-opening .envelope-flap,
+.opener-layer.is-expanding .envelope-flap {
+  z-index: 1;
+}
+
+/* Requirement 1: Wax Seal with Komnasinfo Logo filling full button with no border */
 .seal {
   position: absolute;
-  left: calc(50% - 26px);
-  top: calc(55% - 26px);
-  width: 52px;
-  height: 52px;
+  left: calc(50% - 33px);
+  top: calc(55% - 33px);
+  width: 66px;
+  height: 66px;
   border-radius: 50%;
-  background: #768b71;
-  border: 2.5px solid rgba(255, 255, 255, 0.85);
-  box-shadow: 0 4px 16px rgba(41, 56, 47, 0.3);
-  display: grid;
-  place-items: center;
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 8;
   cursor: pointer;
   padding: 0;
-  overflow: hidden;
+  margin: 0;
+  overflow: visible;
   transition: transform 0.25s ease, opacity 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .seal:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
+}
+
+.seal.is-opening {
+  opacity: 0;
+  transform: scale(0.85);
+  pointer-events: none;
 }
 
 .seal-icon {
-  width: 38px;
-  height: 38px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   display: block;
+  filter: drop-shadow(0 4px 12px rgba(41, 56, 47, 0.25));
 }
 
 /* ---------------------------------------------------------------------------
-   Requirement 6: Full Viewport Expansion with 2-Second Breathing Pause
+   Requirement 6: Full Viewport Expansion with 1-Second See You Display
    --------------------------------------------------------------------------- */
 .opening-transition-veil.is-full-screen {
   position: fixed;
@@ -411,12 +436,12 @@ button:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.9s cubic-bezier(0.37, 0, 0.63, 1);
+  transition: opacity 0.7s cubic-bezier(0.37, 0, 0.63, 1);
   pointer-events: none;
 }
 
 .opening-transition-veil.is-visible {
-  animation: veil-fullscreen-expand 1.0s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation: veil-fullscreen-expand 0.45s cubic-bezier(0.25, 1, 0.5, 1) forwards;
   opacity: 1;
 }
 
@@ -430,7 +455,7 @@ button:focus-visible {
   color: var(--olive);
   font-size: clamp(38px, 11vw, 64px);
   letter-spacing: 0.04em;
-  animation: letter-peaceful-in 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation: letter-peaceful-in 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 @keyframes veil-fullscreen-expand {

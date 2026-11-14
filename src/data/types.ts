@@ -54,10 +54,13 @@ export interface RecipientClosing {
   period: string;
 }
 
+export type FlowerType = 'matahari' | 'carnation';
+
 export interface RecipientData {
   token: string;
   recipient: RecipientProfile;
   theme: RecipientTheme;
+  flower?: FlowerType | FlowerType[];
   greeting: RecipientGreeting;
   facilitatorLetter: FacilitatorLetter;
   teamLetters: TeamMemberMessage[];

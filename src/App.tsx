@@ -12,7 +12,10 @@ export default function App() {
   // Register Service Worker in production only to avoid dev MIME-type and scope conflicts
   if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator && import.meta.env.PROD) {
     try {
-      navigator.serviceWorker.register('/see-you/sw.js', { scope: '/see-you/' }).catch(() => {});
+      const base = import.meta.env.BASE_URL.endsWith('/')
+        ? import.meta.env.BASE_URL
+        : `${import.meta.env.BASE_URL}/`;
+      navigator.serviceWorker.register(`${base}sw.js`, { scope: base }).catch(() => {});
     } catch {
       // Ignore if not supported in test/mock
     }
@@ -147,6 +150,7 @@ export default function App() {
         recipientName={recipient.recipient.name}
         isOpened={isEnvelopeOpened}
         onOpen={handleOpenEnvelope}
+        flower={recipient.flower}
       />
 
       {/* Story Sections (Chapters 01 - 05): Single Viewport Snapping */}

@@ -44,6 +44,7 @@ export interface RecipientData {
     background: string;
     accent: string;
   };
+  flower?: 'matahari' | 'carnation' | ('matahari' | 'carnation')[];
   greeting: {
     headline: string;
     quote: string;
