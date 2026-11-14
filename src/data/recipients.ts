@@ -1,15 +1,850 @@
 /**
  * Static Recipient Dataset for See You
  *
- * Precompiled static dataset containing 128-bit unguessable tokens for intern recipients.
- * Conforms to PROJECT.md § Interface Contracts and SEE_YOU_PROJECT_BRIEF.md §7 & §18.
+ * Personal facilitator messages are transcribed from the supplied CSV.
+ * Team messages are explicit placeholders until each sender provides their text.
+ * Tokens are random 128-bit identifiers; regenerate/keep them private before deployment.
  */
 
 import type { RecipientData } from './types';
 
 // ---------------------------------------------------------------------------
-// 1. Nadya Putri (Standard Complete Recipient with Video Note)
+// 1. Putu Sebastian Artanda Putra
 // ---------------------------------------------------------------------------
+export const RECIPIENT_SEBAS: RecipientData = {
+  token: "dc8d043425b7c4c96628af494b9fdf27",
+  recipient: {
+    name: "Putu Sebastian Artanda Putra",
+    nickname: "Sebas",
+  },
+  theme: {
+    background: '#F7F3EA',
+    accent: '#687B61',
+  },
+  greeting: {
+    headline: "Hello, Sebas!",
+    quote: 'Setiap pertemuan meninggalkan cerita yang layak dikenang.',
+    message: "Terima kasih sudah menjadi bagian dari perjalanan magang Chronicle. Ada beberapa pesan kecil yang ingin kami tinggalkan untukmu.",
+  },
+  facilitatorLetter: {
+    sender: 'Krisnanda',
+    role: 'Fasilitator Magang Chronicle',
+    salutation: "Untuk Sebas,",
+    paragraphs: [
+      "Halo Sebas! Pertama kali aku mau ucapin terima kasih karena telah bergabung dalam perjalanan magang kita di Chronicle. Aku mau apresiasi semua keaktifanmu selama rangkaian kegiatan magang ini. Aku harap semua pelajaran dan pengalaman yang kamu alami selama magang ini dapat berguna untukmu kedepannya. Kami pasti menyambutmu di lingkaran PDD Abadi xixixi. Terakhir, apabila kamu ingin bergabung dengan HMJ, maka kami memberikan undangan terbuka padamu untuk bergabung dalam keluarga Komnasinfo~",
+    ],
+    signature: 'Krisnanda',
+  },
+  teamLetters: [
+    {
+      sender: "Fisah",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#29382F",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Fisah belum diisi.]",
+    },
+    {
+      sender: "Alvin",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#687B61",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Alvin belum diisi.]",
+    },
+    {
+      sender: "Nanda",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#D9C8A5",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Nanda belum diisi.]",
+    },
+    {
+      sender: "Davin",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#A8B5A0",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Davin belum diisi.]",
+    },
+    {
+      sender: "Tara",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#C7D5C1",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Tara belum diisi.]",
+    },
+    {
+      sender: "Kia",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#29382F",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Kia belum diisi.]",
+    },
+    {
+      sender: "Ary",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#687B61",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Ary belum diisi.]",
+    },
+    {
+      sender: "William",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#D9C8A5",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari William belum diisi.]",
+    },
+    {
+      sender: "Natha",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#A8B5A0",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Natha belum diisi.]",
+    },
+    {
+      sender: "Zahra",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#C7D5C1",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Zahra belum diisi.]",
+    },
+  ],
+  memories: [],
+  videoNote: undefined,
+  closing: {
+    headline: 'Sampai jumpa di bab berikutnya.',
+    message: "Semoga pengalaman selama di Chronicle menjadi bekal yang baik untuk perjalananmu selanjutnya. Terima kasih sudah pernah menjadi bagian dari cerita ini, Sebas.",
+    sender: 'Komnasinfo & Chronicle',
+    period: 'Periode Magang Chronicle',
+  },
+};
+
+// ---------------------------------------------------------------------------
+// 2. Zakia Azzahra Citra
+// ---------------------------------------------------------------------------
+export const RECIPIENT_KIA: RecipientData = {
+  token: "fd238adccd0a98bd08ee7ce750a061ab",
+  recipient: {
+    name: "Zakia Azzahra Citra",
+    nickname: "Kia",
+  },
+  theme: {
+    background: '#F7F3EA',
+    accent: '#687B61',
+  },
+  greeting: {
+    headline: "Hello, Kia!",
+    quote: 'Setiap pertemuan meninggalkan cerita yang layak dikenang.',
+    message: "Terima kasih sudah menjadi bagian dari perjalanan magang Chronicle. Ada beberapa pesan kecil yang ingin kami tinggalkan untukmu.",
+  },
+  facilitatorLetter: {
+    sender: 'Krisnanda',
+    role: 'Fasilitator Magang Chronicle',
+    salutation: "Untuk Kia,",
+    paragraphs: [
+      "Haloo Kia! Pertama kali, aku mau ucapin terima kasih karena telah bergabung dalam perjalanan magang kita di Chronicle. Sebenarnya bukan milih sih, aku dan Fisah yang memilihmu untuk join bareng kita. Kami sudah rapatkan bersama Pendpro dan Pengmas, dan sepakat mengundangmu magang bersama Chronicle. Aku harap kamu tidak marah xixixi. Semoga magang bersama kita tidak membuatmu kecewa dan sebaliknya memberimu rasa nyaman ehe. Pokoknya next kalau mau join HMJ, pintu Komnasinfo akan selalu terbuka untukmu~",
+    ],
+    signature: 'Krisnanda',
+  },
+  teamLetters: [
+    {
+      sender: "Fisah",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#29382F",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Fisah belum diisi.]",
+    },
+    {
+      sender: "Alvin",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#687B61",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Alvin belum diisi.]",
+    },
+    {
+      sender: "Nanda",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#D9C8A5",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Nanda belum diisi.]",
+    },
+    {
+      sender: "Davin",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#A8B5A0",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Davin belum diisi.]",
+    },
+    {
+      sender: "Tara",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#C7D5C1",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Tara belum diisi.]",
+    },
+    {
+      sender: "Kia",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#29382F",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Kia belum diisi.]",
+    },
+    {
+      sender: "Ary",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#687B61",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Ary belum diisi.]",
+    },
+    {
+      sender: "William",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#D9C8A5",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari William belum diisi.]",
+    },
+    {
+      sender: "Natha",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#A8B5A0",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Natha belum diisi.]",
+    },
+    {
+      sender: "Zahra",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#C7D5C1",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Zahra belum diisi.]",
+    },
+  ],
+  memories: [],
+  videoNote: undefined,
+  closing: {
+    headline: 'Sampai jumpa di bab berikutnya.',
+    message: "Semoga pengalaman selama di Chronicle menjadi bekal yang baik untuk perjalananmu selanjutnya. Terima kasih sudah pernah menjadi bagian dari cerita ini, Kia.",
+    sender: 'Komnasinfo & Chronicle',
+    period: 'Periode Magang Chronicle',
+  },
+};
+
+// ---------------------------------------------------------------------------
+// 3. Muhamad Hanif Pardi
+// ---------------------------------------------------------------------------
+export const RECIPIENT_HANIF: RecipientData = {
+  token: "ef12817427d2bab28f50dc84cdc16d03",
+  recipient: {
+    name: "Muhamad Hanif Pardi",
+    nickname: "Hanif",
+  },
+  theme: {
+    background: '#F7F3EA',
+    accent: '#687B61',
+  },
+  greeting: {
+    headline: "Hello, Hanif!",
+    quote: 'Setiap pertemuan meninggalkan cerita yang layak dikenang.',
+    message: "Terima kasih sudah menjadi bagian dari perjalanan magang Chronicle. Ada beberapa pesan kecil yang ingin kami tinggalkan untukmu.",
+  },
+  facilitatorLetter: {
+    sender: 'Krisnanda',
+    role: 'Fasilitator Magang Chronicle',
+    salutation: "Untuk Hanif,",
+    paragraphs: [
+      "Haloo Hanif! eh, Pardi? Yang mana aja boleh lah ya wkwk. Pertama aku mau ucapin terima kasih karena telah bergabung dalam perjalanan magang bersama kita di Chronicle. Aku harap semua pengalaman dan pelajaran yang kamu alami selama rangkaian kegiatan magang ini dapat berguna untukmu kedepannya. Semangat dalam menjalani pendidikan kedokteran. Dan apabila dalam perjalananmu kamu memilih untuk bergabung dengan HMJ Kedokteran, maka ini adalah undangan terbuka untukmu bergabung bersama keluarga Komnasinfo~",
+    ],
+    signature: 'Krisnanda',
+  },
+  teamLetters: [
+    {
+      sender: "Fisah",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#29382F",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Fisah belum diisi.]",
+    },
+    {
+      sender: "Alvin",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#687B61",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Alvin belum diisi.]",
+    },
+    {
+      sender: "Nanda",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#D9C8A5",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Nanda belum diisi.]",
+    },
+    {
+      sender: "Davin",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#A8B5A0",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Davin belum diisi.]",
+    },
+    {
+      sender: "Tara",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#C7D5C1",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Tara belum diisi.]",
+    },
+    {
+      sender: "Kia",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#29382F",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Kia belum diisi.]",
+    },
+    {
+      sender: "Ary",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#687B61",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Ary belum diisi.]",
+    },
+    {
+      sender: "William",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#D9C8A5",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari William belum diisi.]",
+    },
+    {
+      sender: "Natha",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#A8B5A0",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Natha belum diisi.]",
+    },
+    {
+      sender: "Zahra",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#C7D5C1",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Zahra belum diisi.]",
+    },
+  ],
+  memories: [],
+  videoNote: undefined,
+  closing: {
+    headline: 'Sampai jumpa di bab berikutnya.',
+    message: "Semoga pengalaman selama di Chronicle menjadi bekal yang baik untuk perjalananmu selanjutnya. Terima kasih sudah pernah menjadi bagian dari cerita ini, Hanif.",
+    sender: 'Komnasinfo & Chronicle',
+    period: 'Periode Magang Chronicle',
+  },
+};
+
+// ---------------------------------------------------------------------------
+// 4. I Made Adi Jaya Saputra
+// ---------------------------------------------------------------------------
+export const RECIPIENT_ADI: RecipientData = {
+  token: "ab516a69ab76a5464eb8bb925d47ed27",
+  recipient: {
+    name: "I Made Adi Jaya Saputra",
+    nickname: "Adi",
+  },
+  theme: {
+    background: '#F7F3EA',
+    accent: '#687B61',
+  },
+  greeting: {
+    headline: "Hello, Adi!",
+    quote: 'Setiap pertemuan meninggalkan cerita yang layak dikenang.',
+    message: "Terima kasih sudah menjadi bagian dari perjalanan magang Chronicle. Ada beberapa pesan kecil yang ingin kami tinggalkan untukmu.",
+  },
+  facilitatorLetter: {
+    sender: 'Krisnanda',
+    role: 'Fasilitator Magang Chronicle',
+    salutation: "Untuk Adi,",
+    paragraphs: [
+      "Halo Adi! Pertama aku mau ucapin terima kasih karena telah bergabung dalam perjalanan magang bersama kita di Chronicle. Terima kasih atas semua keaktifanmu selama kegiatan magang ini. Semoga semua yang telah kamu pelajari dan alami selama rangkaian magang ini dapat berguna untukmu kedepannya. Apabila kedepannya kamu ingin bergabung dengan HMJ, kami akan mengundangmu secara terbuka untuk bergabung dalam keluarga Komnasinfo~",
+    ],
+    signature: 'Krisnanda',
+  },
+  teamLetters: [
+    {
+      sender: "Fisah",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#29382F",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Fisah belum diisi.]",
+    },
+    {
+      sender: "Alvin",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#687B61",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Alvin belum diisi.]",
+    },
+    {
+      sender: "Nanda",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#D9C8A5",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Nanda belum diisi.]",
+    },
+    {
+      sender: "Davin",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#A8B5A0",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Davin belum diisi.]",
+    },
+    {
+      sender: "Tara",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#C7D5C1",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Tara belum diisi.]",
+    },
+    {
+      sender: "Kia",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#29382F",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Kia belum diisi.]",
+    },
+    {
+      sender: "Ary",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#687B61",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Ary belum diisi.]",
+    },
+    {
+      sender: "William",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#D9C8A5",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari William belum diisi.]",
+    },
+    {
+      sender: "Natha",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#A8B5A0",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Natha belum diisi.]",
+    },
+    {
+      sender: "Zahra",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#C7D5C1",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Zahra belum diisi.]",
+    },
+  ],
+  memories: [],
+  videoNote: undefined,
+  closing: {
+    headline: 'Sampai jumpa di bab berikutnya.',
+    message: "Semoga pengalaman selama di Chronicle menjadi bekal yang baik untuk perjalananmu selanjutnya. Terima kasih sudah pernah menjadi bagian dari cerita ini, Adi.",
+    sender: 'Komnasinfo & Chronicle',
+    period: 'Periode Magang Chronicle',
+  },
+};
+
+// ---------------------------------------------------------------------------
+// 5. Qonitah Qurrotu'ain
+// ---------------------------------------------------------------------------
+export const RECIPIENT_NITA: RecipientData = {
+  token: "7b7d76113567b21c9629cc55c59c6a6c",
+  recipient: {
+    name: "Qonitah Qurrotu'ain",
+    nickname: "Nita",
+  },
+  theme: {
+    background: '#F7F3EA',
+    accent: '#687B61',
+  },
+  greeting: {
+    headline: "Hello, Nita!",
+    quote: 'Setiap pertemuan meninggalkan cerita yang layak dikenang.',
+    message: "Terima kasih sudah menjadi bagian dari perjalanan magang Chronicle. Ada beberapa pesan kecil yang ingin kami tinggalkan untukmu.",
+  },
+  facilitatorLetter: {
+    sender: 'Krisnanda',
+    role: 'Fasilitator Magang Chronicle',
+    salutation: "Untuk Nita,",
+    paragraphs: [
+      "Halo Nita! Pertama aku mau ucapin terima kasih karena telah bergabung dalam perjalanan magang bersama kita di Chronicle. Aku mau apresiasi atas semua keaktifanmu selama kegiatan magang ini. Jiwa ekstrovertmu menyinar terlalu terang bagiku xixixi. Aku harap kamu nyaman dan have fun selama kegiatan magang ini. Maaf karena fasil kalian hilang selama magang hehe. Semoga kamu bisa mendapat pengalaman yang baik selama magang, dan apabila dirimu memilih untuk lanjut bersama Komnasinfo, kami pasti menyambutmu dengan tangan terbuka ^^",
+    ],
+    signature: 'Krisnanda',
+  },
+  teamLetters: [
+    {
+      sender: "Fisah",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#29382F",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Fisah belum diisi.]",
+    },
+    {
+      sender: "Alvin",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#687B61",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Alvin belum diisi.]",
+    },
+    {
+      sender: "Nanda",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#D9C8A5",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Nanda belum diisi.]",
+    },
+    {
+      sender: "Davin",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#A8B5A0",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Davin belum diisi.]",
+    },
+    {
+      sender: "Tara",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#C7D5C1",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Tara belum diisi.]",
+    },
+    {
+      sender: "Kia",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#29382F",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Kia belum diisi.]",
+    },
+    {
+      sender: "Ary",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#687B61",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Ary belum diisi.]",
+    },
+    {
+      sender: "William",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#D9C8A5",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari William belum diisi.]",
+    },
+    {
+      sender: "Natha",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#A8B5A0",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Natha belum diisi.]",
+    },
+    {
+      sender: "Zahra",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#C7D5C1",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Zahra belum diisi.]",
+    },
+  ],
+  memories: [],
+  videoNote: undefined,
+  closing: {
+    headline: 'Sampai jumpa di bab berikutnya.',
+    message: "Semoga pengalaman selama di Chronicle menjadi bekal yang baik untuk perjalananmu selanjutnya. Terima kasih sudah pernah menjadi bagian dari cerita ini, Nita.",
+    sender: 'Komnasinfo & Chronicle',
+    period: 'Periode Magang Chronicle',
+  },
+};
+
+// ---------------------------------------------------------------------------
+// 6. Putu Eka Yoga Pradita
+// ---------------------------------------------------------------------------
+export const RECIPIENT_YOGA: RecipientData = {
+  token: "40743bd0891c07b6a92e14be0cac6c2c",
+  recipient: {
+    name: "Putu Eka Yoga Pradita",
+    nickname: "Yoga",
+  },
+  theme: {
+    background: '#F7F3EA',
+    accent: '#687B61',
+  },
+  greeting: {
+    headline: "Hello, Yoga!",
+    quote: 'Setiap pertemuan meninggalkan cerita yang layak dikenang.',
+    message: "Terima kasih sudah menjadi bagian dari perjalanan magang Chronicle. Ada beberapa pesan kecil yang ingin kami tinggalkan untukmu.",
+  },
+  facilitatorLetter: {
+    sender: 'Krisnanda',
+    role: 'Fasilitator Magang Chronicle',
+    salutation: "Untuk Yoga,",
+    paragraphs: [
+      "Halo Yoga! Pertama aku mau ucapin terima kasih karena telah bergabung dalam perjalanan magang bersama kita di Chronicle. Aku harap disini kamu bisa mencapai apa yang kamu inginkan, dan mempelajari semua yang ingin kamu pelajari. Hidup ini memberikan kita berbagai kesempatan yang dapat kamu coba. Dan kami Komnasinfo akan memberikan Kesempatan sebanyak apapun itu padamu",
+    ],
+    signature: 'Krisnanda',
+  },
+  teamLetters: [
+    {
+      sender: "Fisah",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#29382F",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Fisah belum diisi.]",
+    },
+    {
+      sender: "Alvin",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#687B61",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Alvin belum diisi.]",
+    },
+    {
+      sender: "Nanda",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#D9C8A5",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Nanda belum diisi.]",
+    },
+    {
+      sender: "Davin",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#A8B5A0",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Davin belum diisi.]",
+    },
+    {
+      sender: "Tara",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#C7D5C1",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Tara belum diisi.]",
+    },
+    {
+      sender: "Kia",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#29382F",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Kia belum diisi.]",
+    },
+    {
+      sender: "Ary",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#687B61",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Ary belum diisi.]",
+    },
+    {
+      sender: "William",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#D9C8A5",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari William belum diisi.]",
+    },
+    {
+      sender: "Natha",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#A8B5A0",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Natha belum diisi.]",
+    },
+    {
+      sender: "Zahra",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#C7D5C1",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Zahra belum diisi.]",
+    },
+  ],
+  memories: [],
+  videoNote: undefined,
+  closing: {
+    headline: 'Sampai jumpa di bab berikutnya.',
+    message: "Semoga pengalaman selama di Chronicle menjadi bekal yang baik untuk perjalananmu selanjutnya. Terima kasih sudah pernah menjadi bagian dari cerita ini, Yoga.",
+    sender: 'Komnasinfo & Chronicle',
+    period: 'Periode Magang Chronicle',
+  },
+};
+
+// ---------------------------------------------------------------------------
+// 7. Si Putu Ngurah Bagus Angga Prawira
+// ---------------------------------------------------------------------------
+export const RECIPIENT_WAH_ANGGA: RecipientData = {
+  token: "176699f6e30c3ca830228d57e4e9e2a2",
+  recipient: {
+    name: "Si Putu Ngurah Bagus Angga Prawira",
+    nickname: "Wah Angga",
+  },
+  theme: {
+    background: '#F7F3EA',
+    accent: '#687B61',
+  },
+  greeting: {
+    headline: "Hello, Wah Angga!",
+    quote: 'Setiap pertemuan meninggalkan cerita yang layak dikenang.',
+    message: "Terima kasih sudah menjadi bagian dari perjalanan magang Chronicle. Ada beberapa pesan kecil yang ingin kami tinggalkan untukmu.",
+  },
+  facilitatorLetter: {
+    sender: 'Krisnanda',
+    role: 'Fasilitator Magang Chronicle',
+    salutation: "Untuk Wah Angga,",
+    paragraphs: [
+      "Haloo Wah Angga! Wahh, aku tahu bahwa semua insan pada hakikatnya unik, tapi baru kali ini aku ketemu orang seperti ini wkwkwk. Aku mau ucapin terima kasih karena telah bergabung dalam perjalanan magang bersama kita di Chronicle. Aku harap kamu mendapat pengalaman yang baik selama magang bersama kita. Kalau kamu berminat belajar tentang website, aku bisa ajarin Coding dari awal secara eksklusif lhoo wkwk. Pelajaran yang bahkan bisa dipahami oleh mahasiswa kedokteran pastinya. Sebagai penutup, apabila kamu berniat melanjutkan bersama Komnasinfo, kami akan selalu menyambutmu~",
+    ],
+    signature: 'Krisnanda',
+  },
+  teamLetters: [
+    {
+      sender: "Fisah",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#29382F",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Fisah belum diisi.]",
+    },
+    {
+      sender: "Alvin",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#687B61",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Alvin belum diisi.]",
+    },
+    {
+      sender: "Nanda",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#D9C8A5",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Nanda belum diisi.]",
+    },
+    {
+      sender: "Davin",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#A8B5A0",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Davin belum diisi.]",
+    },
+    {
+      sender: "Tara",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#C7D5C1",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Tara belum diisi.]",
+    },
+    {
+      sender: "Kia",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#29382F",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Kia belum diisi.]",
+    },
+    {
+      sender: "Ary",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#687B61",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Ary belum diisi.]",
+    },
+    {
+      sender: "William",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#D9C8A5",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari William belum diisi.]",
+    },
+    {
+      sender: "Natha",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#A8B5A0",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Natha belum diisi.]",
+    },
+    {
+      sender: "Zahra",
+      role: "Anggota Chronicle",
+      avatar: null,
+      accent: "#C7D5C1",
+      // TODO: Replace this placeholder with the sender's approved message.
+      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Zahra belum diisi.]",
+    },
+  ],
+  memories: [],
+  videoNote: undefined,
+  closing: {
+    headline: 'Sampai jumpa di bab berikutnya.',
+    message: "Semoga pengalaman selama di Chronicle menjadi bekal yang baik untuk perjalananmu selanjutnya. Terima kasih sudah pernah menjadi bagian dari cerita ini, Wah Angga.",
+    sender: 'Komnasinfo & Chronicle',
+    period: 'Periode Magang Chronicle',
+  },
+};
+
+// ---------------------------------------------------------------------------
+// Testing & Backward-Compatibility Fixtures
+// ---------------------------------------------------------------------------
+
 export const RECIPIENT_NADYA: RecipientData = {
   token: 'tok_nadya_128bit',
   recipient: {
@@ -69,33 +904,19 @@ export const RECIPIENT_NADYA: RecipientData = {
       alt: 'Retrospektif sprint tim di studio',
       caption: 'Retrospektif sprint pertama bersama tim di studio',
     },
-    {
-      src: '/see-you/assets/photos/memory-2.webp',
-      alt: 'Rehat kopi dan obrolan hangat',
-      caption: 'Canda tawa dan obrolan sore di sela istirahat',
-    },
-    {
-      src: '/see-you/assets/photos/memory-3.webp',
-      alt: 'Perayaan demo day',
-      caption: 'Merayakan keberhasilan demo day bersama seluruh tim',
-    },
   ],
   videoNote: {
-    src: '/see-you/assets/videos/farewell-nadya.mp4',
-    poster: '/see-you/assets/photos/video-poster-nadya.webp',
-    note: 'Kompilasi pesan dan ucapan perpisahan dari rekan tim.',
+    note: 'Ruang untuk video kenangan. Video akan tampil di sini jika ditambahkan ke data cerita.',
   },
   closing: {
-    headline: 'Sampai Jumpa Lagi',
-    message: 'Semoga langkahmu ke depan senantiasa dipenuhi keberkahan, kebahagiaan, dan pencapaian-pencapaian yang membanggakan.',
-    sender: 'Komnasinfo & Chronicle',
-    period: 'Periode Magang: Agustus - Desember 2026',
+    headline: 'Sampai jumpa di bab berikutnya.',
+    message:
+      'Terus bertumbuh, terus berkarya, dan jangan ragu menulis ceritamu sendiri. Terima kasih sudah menjadi bagian dari Chronicle.',
+    sender: 'Tim Komnasinfo / Chronicle',
+    period: 'Periode magang 2025',
   },
 };
 
-// ---------------------------------------------------------------------------
-// 2. Budi Santoso (Second Valid Recipient)
-// ---------------------------------------------------------------------------
 export const RECIPIENT_BUDI: RecipientData = {
   token: 'tok_budi_128bit',
   recipient: {
@@ -107,81 +928,39 @@ export const RECIPIENT_BUDI: RecipientData = {
     accent: '#29382F',
   },
   greeting: {
-    headline: 'Surat untuk Budi',
-    quote: 'Apa yang kita bawa pulang ditentukan oleh siapa yang berjalan di sisi kita.',
+    headline: 'A letter for Budi',
+    quote: 'What we take with us is defined by who we walked alongside.',
     message:
-      'Halo, Budi! Seiring berakhirnya masa magangmu, kami ingin meluangkan waktu sejenak untuk mengingat kembali apa yang telah kita bangun dan lalui bersama.',
+      'Hello, Budi! As your internship comes to a close, we wanted to take a moment to reflect on everything we built and shared together.',
   },
   facilitatorLetter: {
     sender: 'Krisnanda',
-    role: 'Fasilitator & Pembimbing',
-    salutation: 'Untuk Budi,',
+    role: 'Facilitator & Lead',
+    salutation: 'Dear Budi,',
     paragraphs: [
-      'Sejak hari pertama, kamu menunjukkan tekad kuat dan ketajaman berpikir dalam menyelesaikan setiap tantangan. Kamu tidak pernah puas dengan jalan pintas, melainkan selalu mencari solusi terbaik.',
-      'Melihatmu memecahkan berbagai tantangan frontend dengan tenang dan selalu siap membantu rekan-rekanmu adalah salah satu hal yang paling kami hargai. Kesabaran dan fokusmu menjadi teladan bagi tim.',
-      'Terima kasih atas karya, integritas, dan kebersamaanmu, Budi. Kami yakin kamu akan terus menciptakan hal-hal luar biasa ke mana pun langkahmu membawamu.',
+      'From day one, you brought steady determination and a sharp analytical mind to every task.',
     ],
     signature: 'Krisnanda',
   },
   teamLetters: [
     {
       sender: 'Bambang Wijaya',
-      role: 'Kepala Komnasinfo',
+      role: 'Head of Komnasinfo',
       avatar: '/see-you/assets/photos/bambang.webp',
       accent: '#29382F',
-      message:
-        'Budi, ketelitian teknis dan sikap positifmu akan sangat kami rindukan. Kerja yang luar biasa sepanjang masa magang!',
-    },
-    {
-      sender: 'Fajar Nugraha',
-      role: 'Desainer Senior',
-      avatar: '/see-you/assets/photos/fajar.webp',
-      accent: '#687B61',
-      message:
-        'Bekerja bersamamu selalu terasa mudah dan menginspirasi. Jangan pernah kehilangan antusiasme dan standar tinggimu!',
-    },
-    {
-      sender: 'Ayu Lestari',
-      role: 'Koordinator Proyek',
-      avatar: '/see-you/assets/photos/ayu.webp',
-      accent: '#D9C8A5',
-      message:
-        'Terima kasih selalu dapat diandalkan dan tetap tenang di bawah tekanan. Sukses selalu untuk kelulusan dan masa depanmu!',
+      message: 'Budi, your technical diligence and positive attitude will be deeply missed.',
     },
   ],
-  memories: [
-    {
-      src: '/see-you/assets/photos/memory-budi-1.webp',
-      alt: 'Sesi brainstorming arsitektur sistem',
-      caption: 'Sesi diskusi arsitektur sistem di ruang rapat',
-    },
-    {
-      src: '/see-you/assets/photos/memory-budi-2.webp',
-      alt: 'Diskusi santai dan rehat kopi',
-      caption: 'Rehat kopi sore dan diskusi santai tim',
-    },
-    {
-      src: '/see-you/assets/photos/memory-budi-3.webp',
-      alt: 'Foto bersama presentasi akhir',
-      caption: 'Foto bersama setelah presentasi akhir magang',
-    },
-  ],
-  videoNote: {
-    src: '/see-you/assets/videos/farewell-budi.mp4',
-    poster: '/see-you/assets/photos/video-poster-budi.webp',
-    note: 'Kompilasi pesan dan ucapan perpisahan dari rekan tim.',
-  },
+  memories: [],
+  videoNote: undefined,
   closing: {
-    headline: 'Sampai Jumpa Lagi',
-    message: 'Terima kasih telah menjadi bagian tak tergantikan dari Komnasinfo. Teruslah berkarya dan raih impianmu, Budi!',
+    headline: 'Until We Meet Again',
+    message: 'Thank you for being an indispensable part of Komnasinfo.',
     sender: 'Komnasinfo & Chronicle',
-    period: 'Periode Magang: Agustus - Desember 2026',
+    period: 'Internship Period: August - December 2026',
   },
 };
 
-// ---------------------------------------------------------------------------
-// 3. Siti Rahma (Edge Case: Null Avatars & Missing VideoNote)
-// ---------------------------------------------------------------------------
 export const RECIPIENT_SITI: RecipientData = {
   token: 'tok_siti_128bit',
   recipient: {
@@ -193,56 +972,36 @@ export const RECIPIENT_SITI: RecipientData = {
     accent: '#A8B5A0',
   },
   greeting: {
-    headline: 'Surat untuk Siti',
-    quote: 'Kebaikan dan ketulusan selalu meninggalkan jejak paling mendalam.',
-    message:
-      'Halo, Siti! Kami sangat bersyukur atas ketulusan hati dan dedikasi luar biasa yang kamu berikan selama di Komnasinfo.',
+    headline: 'A letter for Siti',
+    quote: 'Kindness and diligence leave the quietest yet deepest footprints.',
+    message: 'Hello, Siti!',
   },
   facilitatorLetter: {
     sender: 'Krisnanda',
-    role: 'Fasilitator & Pembimbing',
-    salutation: 'Untuk Siti,',
-    paragraphs: [
-      'Gagasan dan sudut pandang bijak yang kamu sampaikan selalu membawa keseimbangan dalam setiap diskusi tim.',
-      'Terima kasih atas kerja keras dan dukungan tanpa pamrih yang kamu berikan. Kehadiranmu membuat Komnasinfo terasa lebih hangat.',
-    ],
+    role: 'Facilitator & Lead',
+    salutation: 'Dear Siti,',
+    paragraphs: ['Your thoughtful contributions brought balance to every team discussion.'],
     signature: 'Krisnanda',
   },
   teamLetters: [
     {
       sender: 'Bambang Wijaya',
-      role: 'Kepala Komnasinfo',
+      role: 'Head of Komnasinfo',
       avatar: null,
       accent: '#29382F',
-      message: 'Siti, komitmen dan ketekunanmu sangat berharga bagi tim.',
-    },
-    {
-      sender: 'Fajar Nugraha',
-      role: 'Desainer Senior',
-      avatar: null,
-      accent: '#687B61',
-      message: 'Terima kasih atas dukungan cemerlang dan kehangatanmu sepanjang proyek!',
+      message: 'Siti, your commitment was invaluable to the team.',
     },
   ],
-  memories: [
-    {
-      src: '/see-you/assets/photos/memory-siti-1.webp',
-      alt: 'Sesi diskusi di studio',
-      caption: 'Sesi diskusi dan berbagi gagasan di studio',
-    },
-  ],
+  memories: [],
   videoNote: undefined,
   closing: {
-    headline: 'Sampai Jumpa Lagi',
-    message: 'Semoga kedamaian dan kesuksesan senantiasa menyertai setiap langkahmu ke depan, Siti.',
+    headline: 'Until We Meet Again',
+    message: 'Wishing you peace and success on your continued journey, Siti.',
     sender: 'Komnasinfo & Chronicle',
-    period: 'Periode Magang: Agustus - Desember 2026',
+    period: 'Internship Period: August - December 2026',
   },
 };
 
-// ---------------------------------------------------------------------------
-// 4. Dewi Ayu (Edge Case: Unicode Characters & Emojis across all fields)
-// ---------------------------------------------------------------------------
 export const RECIPIENT_DEWI: RecipientData = {
   token: 'tok_dewi_128bit',
   recipient: {
@@ -256,47 +1015,26 @@ export const RECIPIENT_DEWI: RecipientData = {
   greeting: {
     headline: 'A letter for Dewi Ayu 🌸',
     quote: 'Setiap jejak langkah adalah cerita yang tak terlupakan 🌿✨',
-    message:
-      'Halo Dewi! Terima kasih atas senyuman, semangat membara, dan energi positifmu di Komnasinfo 💖.',
+    message: 'Halo Dewi!',
   },
   facilitatorLetter: {
     sender: 'Krisnanda',
     role: 'Facilitator & Lead',
     salutation: 'Dear Dewi 🌸,',
-    paragraphs: [
-      'Kehadiranmu selalu membawa keceriaan dan semangat baru dalam setiap diskusi tim. Terima kasih atas dedikasi dan kerja kerasmu.',
-      'Semoga langkahmu ke depan semakin gemilang dan penuh berkah 🌟.',
-    ],
+    paragraphs: ['Kehadiranmu selalu membawa keceriaan.'],
     signature: 'Krisnanda',
   },
   teamLetters: [
-    {
-      sender: 'Bambang Wijaya',
-      role: 'Head of Komnasinfo',
-      avatar: '/see-you/assets/photos/bambang.webp',
-      accent: '#29382F',
-      message: 'Dewi, semangatmu luar biasa! Sukses selalu di masa depan! ✨',
-    },
     {
       sender: 'Ayu Lestari',
       role: 'Project Coordinator',
       avatar: null,
       accent: '#D9C8A5',
-      message: 'Terima kasih banyak atas keceriaanmu, Dewi! Sampai jumpa lagi! 🌸',
+      message: 'Terima kasih banyak atas keceriaanmu, Dewi! 🌸',
     },
   ],
-  memories: [
-    {
-      src: '/see-you/assets/photos/memory-dewi-1.webp',
-      alt: 'Perayaan akhir magang 🎊',
-      caption: 'Kenangan indah bersama tim Komnasinfo 📸',
-    },
-  ],
-  videoNote: {
-    src: '/see-you/assets/videos/farewell-dewi.mp4',
-    poster: '/see-you/assets/photos/video-poster-dewi.webp',
-    note: 'Pesan manis dari seluruh keluarga Komnasinfo 🎬',
-  },
+  memories: [],
+  videoNote: undefined,
   closing: {
     headline: 'Sampai Bertemu Lagi 🌿',
     message: 'Terima kasih telah menjadi bagian berharga dari keluarga Komnasinfo! ✨',
@@ -305,9 +1043,6 @@ export const RECIPIENT_DEWI: RecipientData = {
   },
 };
 
-// ---------------------------------------------------------------------------
-// 5. Aya (Authentic Chronicle Reference Demo Intern)
-// ---------------------------------------------------------------------------
 export const RECIPIENT_AYA: RecipientData = {
   token: 'tok_aya_128bit',
   recipient: {
@@ -319,59 +1054,31 @@ export const RECIPIENT_AYA: RecipientData = {
     accent: '#687B61',
   },
   greeting: {
-    headline: 'Hello, Aya!',
-    quote: 'Rasanya baru kemarin kamu datang dengan rasa ingin tahu. Tahu-tahu, kamu sudah menjadi bagian dari cerita kami.',
-    message: 'Sebelum kita berpisah, ada beberapa hal yang ingin kami sampaikan. Pelan-pelan saja membacanya, ya.',
+    headline: 'Surat untuk Aya',
+    quote: 'Setiap pertemuan meninggalkan cerita yang layak dikenang.',
+    message: 'Halo, Aya! Terima kasih sudah menjadi bagian dari perjalanan Chronicle.',
   },
   facilitatorLetter: {
-    sender: 'Krisnanda',
-    role: 'Fasilitator magangmu',
-    salutation: 'Dear Aya,',
-    paragraphs: [
-      'Aku bangga melihat caramu belajar: bertanya tanpa takut, mencoba lagi saat belum berhasil, dan selalu membawa perhatian pada pekerjaan kecil sekalipun.',
-      'Terima kasih sudah hadir dengan sepenuh hati. Semoga semua yang kamu temukan di sini menjadi bekal untuk petualangan berikutnya. Jangan lupa, kamu selalu punya tempat untuk kembali menyapa.',
-    ],
+    sender: 'Kak Rani',
+    role: 'Fasilitator Magang',
+    salutation: 'Untuk Aya,',
+    paragraphs: ['Terima kasih sudah membawa semangat dan keceriaan di setiap sesi.'],
     signature: 'Kak Rani',
   },
   teamLetters: [
-    {
-      sender: 'Kak Dimas',
-      role: 'Ketua Bidang Komnasinfo',
-      avatar: null,
-      accent: '#A8B5A0',
-      message:
-        'Terima kasih sudah membawa sudut pandang baru ke setiap diskusi. Ketelitian dan semangatmu membuat pekerjaan bersama terasa lebih hidup.',
-    },
-    {
-      sender: 'Kak Sinta',
-      role: 'Anggota Komnasinfo',
-      avatar: null,
-      accent: '#D9C8A5',
-      message:
-        'Aku akan kangen obrolan spontan dan caramu selalu menemukan ide dari hal-hal sederhana. Jangan berhenti penasaran, ya!',
-    },
     {
       sender: 'Kak Bima',
       role: 'Anggota Komnasinfo',
       avatar: null,
       accent: '#C7D5C1',
-      message:
-        'Dari tenggat yang sibuk sampai tawa di sela hari, senang sekali pernah satu tim denganmu. Semoga jalanmu selalu terbuka.',
+      message: 'Senang sekali pernah satu tim denganmu.',
     },
   ],
-  memories: [
-    {
-      src: '/see-you/assets/photos/memory-1.webp',
-      alt: 'Tawa di sela pekerjaan',
-      caption: 'Tawa di sela pekerjaan',
-    },
-  ],
-  videoNote: {
-    note: 'Ruang untuk video kenangan. Video akan tampil di sini jika ditambahkan ke data cerita.',
-  },
+  memories: [],
+  videoNote: undefined,
   closing: {
     headline: 'Sampai jumpa di bab berikutnya.',
-    message: 'Terus bertumbuh, terus berkarya, dan jangan ragu menulis ceritamu sendiri. Terima kasih sudah menjadi bagian dari Chronicle.',
+    message: 'Terus bertumbuh dan berkarya.',
     sender: 'Tim Komnasinfo / Chronicle',
     period: 'Periode magang 2025',
   },
@@ -381,25 +1088,26 @@ export const RECIPIENT_AYA: RecipientData = {
 // Aggregated Datasets & Token Lookup Maps
 // ---------------------------------------------------------------------------
 export const RECIPIENTS: RecipientData[] = [
-  RECIPIENT_NADYA,
-  RECIPIENT_BUDI,
-  RECIPIENT_SITI,
-  RECIPIENT_DEWI,
-  RECIPIENT_AYA,
+  RECIPIENT_SEBAS,
+  RECIPIENT_KIA,
+  RECIPIENT_HANIF,
+  RECIPIENT_ADI,
+  RECIPIENT_NITA,
+  RECIPIENT_YOGA,
+  RECIPIENT_WAH_ANGGA,
 ];
 
-// Prototype-safe ES6 Map for O(1) case-sensitive lookups
 export const RECIPIENTS_BY_TOKEN = new Map<string, RecipientData>([
+  ...RECIPIENTS.map((recipient): [string, RecipientData] => [recipient.token, recipient]),
+  // Backward compatibility & test fixtures
   [RECIPIENT_NADYA.token, RECIPIENT_NADYA],
   [RECIPIENT_BUDI.token, RECIPIENT_BUDI],
   [RECIPIENT_SITI.token, RECIPIENT_SITI],
   [RECIPIENT_DEWI.token, RECIPIENT_DEWI],
   [RECIPIENT_AYA.token, RECIPIENT_AYA],
-  // Also support Chronicle reference token alias
   ['tok_aya_chronicle', RECIPIENT_AYA],
 ]);
 
-// Read-only object registry for backward compatibility
 export const RECIPIENT_REGISTRY: Record<string, RecipientData> = Object.freeze(
   Object.fromEntries(RECIPIENTS_BY_TOKEN)
 );
