@@ -17,7 +17,7 @@ Berikut adalah langkah-langkah untuk mengaktifkan GitHub Pages di repositori Git
 ---
 
 ## 2. Cara Kerja Deployment Otomatis
-- Setiap kali Anda melakukan `git push` ke branch `main`, GitHub Actions akan otomatis:
+- Setiap kali Anda melakukan `git push` ke branch `master` atau `main`, GitHub Actions akan otomatis:
   1. Menjalankan checkout kode & instalasi dependensi pnpm.
   2. Menjalankan verifikasi unit test (`pnpm test`).
   3. Membangun aplikasi produksi (`pnpm run build`) dengan base path `/see-you/`.
@@ -30,7 +30,7 @@ Berikut adalah langkah-langkah untuk mengaktifkan GitHub Pages di repositori Git
 Jika ingin memicu deployment tanpa membuat commit baru:
 1. Buka tab **Actions** di repositori GitHub Anda.
 2. Di sidebar kiri, pilih workflow **Deploy See You to GitHub Pages**.
-3. Klik tombol **Run workflow** di sebelah kanan atas, lalu pilih branch `main` dan klik tombol hijau **Run workflow**.
+3. Klik tombol **Run workflow** di sebelah kanan atas, pilih branch `master` (atau `main`), lalu klik tombol hijau **Run workflow**.
 
 ---
 
