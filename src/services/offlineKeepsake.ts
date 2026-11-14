@@ -28,6 +28,8 @@ export function getKeepsakeAssetList(recipient: RecipientData): string[] {
     '/see-you/assets/botanical/flower-a.svg',
     '/see-you/assets/botanical/flower-b.svg',
     '/see-you/assets/icons/logo-komnas.svg',
+    '/see-you/assets/images/buket carnation.webp',
+    '/see-you/assets/images/buket matahari.webp',
   ];
 
   // Add team member avatars if available

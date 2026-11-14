@@ -45,7 +45,7 @@ describe('New Features & Indonesian Localization Integration Tests', () => {
     vi.restoreAllMocks();
   });
 
-  it('renders initial opener view with bell-ringing animation, Komnasinfo seal, and locked scroll', () => {
+  it('renders initial opener view with smooth bell-ringing, natural flower bouquets, Komnasinfo seal, and locked scroll', () => {
     const { container } = render(<App />);
 
     // Topbar header has wordmark and icon-only audio button
@@ -62,8 +62,13 @@ describe('New Features & Indonesian Localization Integration Tests', () => {
     expect(screen.getByText(/surat ini ditulis khusus untuk/i)).toBeInTheDocument();
     expect(screen.getByTestId('recipient-name')).toHaveTextContent('Nadya Putri');
 
-    // Message
+    // Decorative flower bouquets behind envelope
+    expect(container.querySelector('.bouquet-right')).toBeInTheDocument();
+    expect(container.querySelector('.bouquet-left')).toBeInTheDocument();
+
+    // Message & upward arrow hint
     expect(screen.getByText(/seseorang ingin menyampaikan/i)).toBeInTheDocument();
+    expect(screen.getByText(/↑ ketuk amplop untuk membuka surat/i)).toBeInTheDocument();
 
     // Envelope bell-ringing idle class
     const envelope = container.querySelector('.envelope');
@@ -92,9 +97,9 @@ describe('New Features & Indonesian Localization Integration Tests', () => {
     // Opening state triggers
     expect(envelope).toHaveClass('is-opening');
 
-    // Fast-forward timers for full-screen veil expansion and unlocking
+    // Fast-forward timers for full sequence: expansion + 2-second breathing pause + fading
     act(() => {
-      vi.advanceTimersByTime(1200);
+      vi.advanceTimersByTime(5000);
     });
 
     // After opening, body scroll lock is released
@@ -108,7 +113,7 @@ describe('New Features & Indonesian Localization Integration Tests', () => {
       fireEvent.click(readAgainBtn);
     });
 
-    // View returns to locked opener state
+    // View returns to locked opener state immediately
     expect(document.body.style.overflow).toBe('hidden');
     expect(container.querySelector('.envelope')).toBeInTheDocument();
   });

@@ -119,10 +119,17 @@ export default function App() {
     setCurrentChapter(targetChapter);
   };
 
-  // Requirement 6: "kembalikan ke render view dengan tampilan amplop yang masih terkunci lagi"
+  // Requirement 2 & 6: Return to locked envelope view and immediately reset story scroll to beginning
   const handleReadAgain = () => {
     setIsEnvelopeOpened(false);
     setCurrentChapter(1);
+    if (storyContainerRef.current) {
+      storyContainerRef.current.scrollTop = 0;
+    }
+    const greetingEl = document.querySelector('#greeting-section');
+    if (greetingEl && typeof greetingEl.scrollIntoView === 'function') {
+      greetingEl.scrollIntoView({ behavior: 'instant' });
+    }
     if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
       window.scrollTo({ top: 0, behavior: 'instant' });
     }
