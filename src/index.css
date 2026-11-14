@@ -1,0 +1,770 @@
+:root {
+  /* Brand Color Tokens */
+  --paper: #F7F3EA;
+  --sage: #A8B5A0;
+  --olive: #687B61;
+  --forest: #29382F;
+  --champagne: #D9C8A5;
+
+  /* Section Chapter Pastels */
+  --bg-chapter-1: #ecf0e8;
+  --bg-chapter-2: #f5efe2;
+  --bg-chapter-3: #e8eee5;
+  --bg-chapter-4: #f8f3e9;
+  --bg-chapter-5: #dfe8dc;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--paper);
+  color: var(--forest);
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.see-you-app {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0;
+}
+
+h1, h2, h3, .serif {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+button {
+  font-family: "DM Sans", sans-serif;
+  cursor: pointer;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--olive);
+  outline-offset: 4px;
+}
+
+/* Paper Grain Texture Overlay */
+.texture {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+  opacity: 0.28;
+  background-image: url("/see-you/assets/textures/paper-grain.png"), url("/assets/textures/paper-grain.png");
+}
+
+/* Chrome / Navigation TopBar */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 45;
+  background: linear-gradient(to bottom, rgba(247, 243, 234, 0.95) 75%, transparent);
+}
+
+.wordmark {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  margin: 0;
+}
+
+.wordmark span,
+.wordmark em {
+  color: var(--olive);
+  font-style: italic;
+  font-weight: 600;
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Topbar Unmute / Mute Audio Toggle Button */
+.btn-audio-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(247, 243, 234, 0.92);
+  border: 1px solid #cbd3c5;
+  border-radius: 100px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--forest);
+  letter-spacing: 0.04em;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(41, 56, 47, 0.06);
+}
+
+.btn-audio-toggle:hover {
+  background: #ebe4d6;
+  transform: translateY(-1px);
+}
+
+.audio-icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* ---------------------------------------------------------------------------
+   Top-level Opener Layer (Initial Render View)
+   Unscrollable until opened
+   --------------------------------------------------------------------------- */
+.opener-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: radial-gradient(circle at 50% 38%, #fffdf7 0%, var(--paper) 67%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 72px 20px 24px;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.opener-layer.is-done {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-20px);
+}
+
+.opener-inner {
+  width: 100%;
+  max-width: 440px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.intro-label {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--olive);
+  margin: 0 0 6px;
+}
+
+.recipient-name {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(26px, 7.5vw, 38px);
+  font-style: italic;
+  margin-bottom: 24px;
+  color: var(--forest);
+}
+
+.opener-title {
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  font-size: clamp(22px, 5.5vw, 30px);
+  margin: 0 0 8px;
+}
+
+.opener-title em {
+  color: var(--olive);
+  font-style: italic;
+}
+
+.opener-hint {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--olive);
+  margin: 0;
+  animation: hint-float 1.8s ease-in-out infinite;
+}
+
+@keyframes hint-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Layered CSS Envelope & Idle Sway/Lift Animation
+   --------------------------------------------------------------------------- */
+@keyframes envelope-sway-lift {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(-1.5deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-5px) rotate(1.5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.envelope {
+  width: min(78vw, 310px);
+  height: 195px;
+  margin: 0 auto 24px;
+  position: relative;
+  filter: drop-shadow(0 16px 22px rgba(50, 63, 47, 0.13));
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.envelope.is-idle {
+  animation: envelope-sway-lift 1.8s ease-in-out infinite;
+}
+
+.envelope.is-opening {
+  animation: none;
+}
+
+.envelope-back {
+  position: absolute;
+  inset: 0;
+  background: #ddd1b9;
+  border-radius: 4px;
+}
+
+.envelope-letter {
+  position: absolute;
+  width: 82%;
+  height: 76%;
+  left: 9%;
+  top: 12%;
+  background: #fffdf7;
+  border: 1px solid #e8decb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  color: var(--olive);
+  font-size: 22px;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+  box-shadow: 0 4px 12px rgba(41, 56, 47, 0.08);
+}
+
+.envelope-letter.is-expanded {
+  z-index: 10;
+  background: #fffdf7;
+}
+
+.envelope-front {
+  position: absolute;
+  inset: 0;
+  background: #e9dfca;
+  clip-path: polygon(0 0, 50% 55%, 100% 0, 100% 100%, 0 100%);
+  border-radius: 4px;
+}
+
+.envelope-flap {
+  position: absolute;
+  inset: 0;
+  background: #d4c8ad;
+  clip-path: polygon(0 0, 100% 0, 50% 58%);
+  transform-origin: top;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2;
+}
+
+/* Wax Seal with Komnasinfo Logo */
+.seal {
+  position: absolute;
+  left: calc(50% - 21px);
+  top: calc(55% - 21px);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #879b82;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 4px 12px rgba(41, 56, 47, 0.22);
+  display: grid;
+  place-items: center;
+  z-index: 5;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.seal-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.opening-transition-veil {
+  position: fixed;
+  inset: 0;
+  background: #fffdf7;
+  z-index: 50;
+  animation: veil-expand 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  pointer-events: none;
+}
+
+@keyframes veil-expand {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 0.98;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Single-Viewport Scroll Snapping Storybook
+   --------------------------------------------------------------------------- */
+#story {
+  max-width: 640px;
+  margin: auto;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.story-locked {
+  overflow-y: hidden !important;
+}
+
+.chapter {
+  height: 100dvh;
+  max-height: 100dvh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: clamp(68px, 9.5vh, 82px) clamp(16px, 4vw, 24px) clamp(16px, 2.5vh, 24px);
+  box-sizing: border-box;
+}
+
+.chapter-inner {
+  width: 100%;
+  max-width: 480px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.chapter-action-wrap {
+  margin-top: clamp(10px, 1.8vh, 16px);
+  display: flex;
+  justify-content: center;
+}
+
+.eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--olive);
+  margin: 0 0 clamp(8px, 1.5vh, 14px);
+}
+
+h2 {
+  font-size: clamp(28px, 6vh, 42px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  margin-bottom: clamp(10px, 1.8vh, 18px);
+}
+
+h2 em {
+  font-weight: 400;
+  color: var(--olive);
+}
+
+.body-copy {
+  font-size: clamp(12.5px, 1.7vh, 14.5px);
+  line-height: 1.55;
+  color: #59665a;
+}
+
+.btn {
+  min-height: 42px;
+  border-radius: 100px;
+  padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  transition: transform 0.2s, background 0.2s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+.btn-dark {
+  background: var(--forest);
+  border: 1px solid var(--forest);
+  color: var(--paper);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--olive);
+  color: var(--forest);
+}
+
+/* ---------------------------------------------------------------------------
+   Chapter 01: Salam Pembuka (Greeting)
+   --------------------------------------------------------------------------- */
+.greeting-chapter {
+  background: var(--bg-chapter-1);
+}
+
+.greeting-chapter .large-quote {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(18px, 3vh, 25px);
+  line-height: 1.35;
+  color: var(--forest);
+  margin: clamp(12px, 2vh, 20px) 0;
+  font-style: italic;
+}
+
+.divider {
+  width: 45px;
+  height: 1px;
+  background: var(--olive);
+  margin: clamp(10px, 1.5vh, 18px) 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Chapter 02: Surat dari Fasilitator (Facilitator Letter)
+   --------------------------------------------------------------------------- */
+.letter-chapter {
+  background: var(--bg-chapter-2);
+}
+
+.paper-card {
+  padding: clamp(14px, 2.2vh, 22px);
+  background: #fffdf7;
+  box-shadow: 0 12px 32px rgba(72, 73, 51, 0.06);
+  border: 1px solid #ebe4d6;
+  position: relative;
+  transform: rotate(-0.5deg);
+}
+
+.paper-card::before {
+  content: "✳";
+  position: absolute;
+  right: 18px;
+  top: 14px;
+  color: var(--champagne);
+  font-size: 22px;
+}
+
+.paper-paragraphs p {
+  font-size: clamp(11.5px, 1.55vh, 13px);
+  line-height: 1.48;
+  color: #566153;
+  margin-bottom: 6px;
+}
+
+.signature {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(18px, 2.3vh, 21px);
+  color: var(--forest);
+  margin-top: 8px;
+}
+
+.person-role {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--olive);
+  margin: 2px 0 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Chapter 03: Pesan dari Rekan Tim (Horizontal Swipe Cards)
+   --------------------------------------------------------------------------- */
+.team-chapter {
+  background: var(--bg-chapter-3);
+}
+
+.team-carousel {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px 2px 8px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.team-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.team-card {
+  flex: 0 0 85%;
+  max-width: 320px;
+  scroll-snap-align: center;
+  background: #fbf9f2;
+  border: 1px solid #d8dfd4;
+  padding: clamp(12px, 2vh, 16px);
+  border-radius: 4px;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(41, 56, 47, 0.06);
+}
+
+.team-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--accent, var(--sage));
+  border-radius: 4px 0 0 4px;
+}
+
+.person-row {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--accent, var(--sage));
+  color: var(--forest);
+  display: grid;
+  place-items: center;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  flex: none;
+}
+
+.person-name {
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+  margin: 0;
+}
+
+.team-message-text {
+  font-size: clamp(11.5px, 1.55vh, 13px);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.carousel-hint {
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--olive);
+  text-align: center;
+  margin: 6px 0 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Chapter 04: Kenangan Bersama (Horizontal Swipe Photo Gallery)
+   --------------------------------------------------------------------------- */
+.moments-chapter {
+  background: var(--bg-chapter-4);
+}
+
+.photo-carousel {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px 2px 8px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.photo-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.photo-card {
+  flex: 0 0 75%;
+  max-width: 250px;
+  scroll-snap-align: center;
+  margin: 0;
+  background: #fff;
+  padding: 8px 8px 12px;
+  box-shadow: 0 8px 20px rgba(49, 58, 45, 0.1);
+  border-radius: 2px;
+}
+
+.photo-card img {
+  width: 100%;
+  height: clamp(110px, 17vh, 140px);
+  object-fit: cover;
+  display: block;
+  background: #dce1d5;
+}
+
+.photo-card figcaption {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 11px;
+  text-align: center;
+  padding-top: 8px;
+  color: #5b6b59;
+}
+
+.video-note {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: 1px dashed #b7c2b3;
+  color: #687b61;
+  font-size: 11px;
+  line-height: 1.4;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.video-note svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Chapter 05: Sampai Jumpa (Closing)
+   --------------------------------------------------------------------------- */
+.closing-chapter {
+  text-align: center;
+  background: var(--bg-chapter-5);
+}
+
+.closing-chapter .chapter-inner {
+  max-width: 420px;
+}
+
+.closing-chapter h2 {
+  font-size: clamp(32px, 7.5vh, 46px);
+  margin-bottom: 10px;
+}
+
+.closing-chapter .body-copy {
+  margin: 0 auto clamp(12px, 2vh, 20px);
+  max-width: 330px;
+}
+
+.closing-meta {
+  font-size: 10px;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--olive);
+  margin: clamp(10px, 1.8vh, 18px) 0;
+}
+
+.button-stack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.ending-mark {
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  margin-top: clamp(12px, 2vh, 20px);
+  color: var(--olive);
+}
+
+/* ---------------------------------------------------------------------------
+   Fallback & Edge Cases
+   --------------------------------------------------------------------------- */
+.invalid {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 35px;
+}
+
+/* Desktop Preview wrapper */
+@media (min-width: 800px) {
+  #story {
+    box-shadow: 0 0 70px rgba(40, 55, 45, 0.12);
+  }
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
