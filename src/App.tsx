@@ -9,12 +9,12 @@ import Envelope from './components/envelope/Envelope';
 import Story from './components/story/Story';
 
 export default function App() {
-  // Register Service Worker for subpath deployment
-  if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
+  // Register Service Worker in production only to avoid dev MIME-type and scope conflicts
+  if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator && import.meta.env.PROD) {
     try {
-      navigator.serviceWorker.register('/see-you/sw.js', { scope: '/see-you/' });
+      navigator.serviceWorker.register('/see-you/sw.js', { scope: '/see-you/' }).catch(() => {});
     } catch {
-      // Ignore if not supported in mock
+      // Ignore if not supported in test/mock
     }
   }
 
@@ -119,19 +119,20 @@ export default function App() {
     setCurrentChapter(targetChapter);
   };
 
+  // Requirement 6: "kembalikan ke render view dengan tampilan amplop yang masih terkunci lagi"
   const handleReadAgain = () => {
-    const greetingEl = document.querySelector('#greeting-section');
-    if (greetingEl && typeof greetingEl.scrollIntoView === 'function') {
-      greetingEl.scrollIntoView({ behavior: 'smooth' });
-    }
+    setIsEnvelopeOpened(false);
     setCurrentChapter(1);
+    if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
   };
 
   return (
     <div className={`see-you-app ${!isEnvelopeOpened ? 'is-envelope-closed' : 'is-envelope-open'}`}>
       <div className="texture" aria-hidden="true" />
 
-      {/* Topbar: Fixed Header with "See You" & "Unmute" / "Mute" */}
+      {/* Topbar: Fixed Header with "See You" & Icon-only Audio Toggle */}
       <Topbar currentChapter={currentChapter} totalChapters={5} />
 
       {/* Opener Section: Separate Top-level Layer (Unscrollable until opened) */}

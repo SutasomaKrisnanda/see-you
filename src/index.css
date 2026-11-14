@@ -74,7 +74,9 @@ button:focus-visible {
   background-image: url("/see-you/assets/textures/paper-grain.png"), url("/assets/textures/paper-grain.png");
 }
 
-/* Chrome / Navigation TopBar */
+/* ---------------------------------------------------------------------------
+   Chrome / Navigation TopBar
+   --------------------------------------------------------------------------- */
 .topbar {
   position: fixed;
   top: 0;
@@ -110,31 +112,39 @@ button:focus-visible {
   gap: 12px;
 }
 
-/* Topbar Unmute / Mute Audio Toggle Button */
-.btn-audio-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(247, 243, 234, 0.92);
+/* Requirement 1 & 2: Pure Icon-only Audio Toggle Button */
+.icon-button {
   border: 1px solid #cbd3c5;
-  border-radius: 100px;
-  padding: 6px 14px;
-  font-size: 12px;
-  font-weight: 600;
+  background: rgba(247, 243, 234, 0.92);
   color: var(--forest);
-  letter-spacing: 0.04em;
-  transition: all 0.25s ease;
-  box-shadow: 0 2px 8px rgba(41, 56, 47, 0.06);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 3px 10px rgba(41, 56, 47, 0.08);
+  transition: all 0.22s ease;
+  padding: 0;
 }
 
-.btn-audio-toggle:hover {
+.icon-button:hover {
   background: #ebe4d6;
   transform: translateY(-1px);
 }
 
+.icon-button.is-playing {
+  color: var(--forest);
+  border-color: var(--olive);
+  background: #eef2eb;
+}
+
+.icon-button.is-muted {
+  color: #7b8878;
+}
+
 .audio-icon {
-  width: 14px;
-  height: 14px;
+  width: 19px;
+  height: 19px;
 }
 
 /* ---------------------------------------------------------------------------
@@ -220,23 +230,36 @@ button:focus-visible {
 }
 
 /* ---------------------------------------------------------------------------
-   Layered CSS Envelope & Idle Sway/Lift Animation
+   Requirement 4: Bell Ringing Idle Animation with 2-Second Resting Pause
    --------------------------------------------------------------------------- */
-@keyframes envelope-sway-lift {
+@keyframes bell-ring {
   0% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0) rotate(0deg);
   }
-  25% {
-    transform: translateY(-5px) rotate(-1.5deg);
+  3% {
+    transform: translateY(-3px) rotate(-8deg);
   }
-  50% {
-    transform: translateY(-9px) rotate(0deg);
+  6% {
+    transform: translateY(-7px) rotate(8deg);
   }
-  75% {
-    transform: translateY(-5px) rotate(1.5deg);
+  10% {
+    transform: translateY(-5px) rotate(-7deg);
   }
+  14% {
+    transform: translateY(-3px) rotate(5deg);
+  }
+  18% {
+    transform: translateY(-2px) rotate(-3deg);
+  }
+  22% {
+    transform: translateY(-1px) rotate(2deg);
+  }
+  26% {
+    transform: translateY(0) rotate(0deg);
+  }
+  /* 26% to 100% (~2 full seconds): Quiet resting pause */
   100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0) rotate(0deg);
   }
 }
 
@@ -249,10 +272,11 @@ button:focus-visible {
   cursor: pointer;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+  transform-origin: top center;
 }
 
-.envelope.is-idle {
-  animation: envelope-sway-lift 1.8s ease-in-out infinite;
+.envelope.is-bell-ringing {
+  animation: bell-ring 2.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
 }
 
 .envelope.is-opening {
@@ -285,11 +309,6 @@ button:focus-visible {
   box-shadow: 0 4px 12px rgba(41, 56, 47, 0.08);
 }
 
-.envelope-letter.is-expanded {
-  z-index: 10;
-  background: #fffdf7;
-}
-
 .envelope-front {
   position: absolute;
   inset: 0;
@@ -308,52 +327,85 @@ button:focus-visible {
   z-index: 2;
 }
 
-/* Wax Seal with Komnasinfo Logo */
+/* Wax Seal with Official Komnasinfo Logo */
 .seal {
   position: absolute;
-  left: calc(50% - 21px);
-  top: calc(55% - 21px);
-  width: 42px;
-  height: 42px;
+  left: calc(50% - 22px);
+  top: calc(55% - 22px);
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: #879b82;
-  border: 2px solid rgba(255, 255, 255, 0.55);
-  box-shadow: 0 4px 12px rgba(41, 56, 47, 0.22);
+  background: #7a8f75;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 4px 14px rgba(41, 56, 47, 0.25);
   display: grid;
   place-items: center;
   z-index: 5;
   cursor: pointer;
   padding: 0;
+  overflow: hidden;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .seal-icon {
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  display: block;
 }
 
-.opening-transition-veil {
+/* ---------------------------------------------------------------------------
+   Requirement 5: Full Viewport Expansion (Both Width and Height)
+   --------------------------------------------------------------------------- */
+.opening-transition-veil.is-full-screen {
   position: fixed;
   inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  z-index: 100;
   background: #fffdf7;
-  z-index: 50;
-  animation: veil-expand 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: veil-fullscreen-expand 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   pointer-events: none;
 }
 
-@keyframes veil-expand {
+.veil-letter-card {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  color: var(--olive);
+  font-size: clamp(38px, 11vw, 64px);
+  animation: letter-text-glow 0.65s ease-out forwards;
+}
+
+@keyframes veil-fullscreen-expand {
   0% {
     opacity: 0;
-    transform: scale(0.7);
+    clip-path: inset(25% 15% 35% 15% round 6px);
   }
-  50% {
-    opacity: 0.98;
+  60% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0 round 0);
   }
   100% {
     opacity: 0;
+    clip-path: inset(0 0 0 0 round 0);
+  }
+}
+
+@keyframes letter-text-glow {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
     transform: scale(1);
+    opacity: 0;
   }
 }
 
@@ -540,7 +592,7 @@ h2 em {
 }
 
 /* ---------------------------------------------------------------------------
-   Chapter 03: Pesan dari Rekan Tim (Horizontal Swipe Cards)
+   Chapter 03: Pesan dari Rekan Tim (Continuous Infinite Auto-Scroll)
    --------------------------------------------------------------------------- */
 .team-chapter {
   background: var(--bg-chapter-3);
@@ -548,12 +600,17 @@ h2 em {
 
 .team-carousel {
   display: flex;
-  gap: 12px;
+  gap: 14px;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 4px 2px 8px;
+  padding: 8px 4px 12px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  cursor: grab;
+  user-select: none;
+}
+
+.team-carousel:active {
+  cursor: grabbing;
 }
 
 .team-carousel::-webkit-scrollbar {
@@ -561,9 +618,8 @@ h2 em {
 }
 
 .team-card {
-  flex: 0 0 85%;
-  max-width: 320px;
-  scroll-snap-align: center;
+  flex: 0 0 82%;
+  max-width: 310px;
   background: #fbf9f2;
   border: 1px solid #d8dfd4;
   padding: clamp(12px, 2vh, 16px);

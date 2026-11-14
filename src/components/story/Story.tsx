@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import type { CSSProperties } from 'react';
 import type { RecipientData, TeamMemberMessage, MemoryPhoto } from '../../data/types';
 import { saveMemoryOffline } from '../../services/offlineKeepsake';
@@ -11,6 +11,10 @@ interface StoryProps {
 
 export default function Story({ recipient, onReadAgain, onNextChapter }: StoryProps) {
   const [saveState, setSaveState] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle');
+  const [isCarouselPaused, setIsCarouselPaused] = useState(false);
+  const carouselRef = useRef<HTMLDivElement | null>(null);
+  const isPausedRef = useRef(false);
+  isPausedRef.current = isCarouselPaused;
 
   const handleSaveMemory = () => {
     if (saveState === 'saving') return;
@@ -27,6 +31,41 @@ export default function Story({ recipient, onReadAgain, onNextChapter }: StoryPr
         setSaveState('error');
       });
   };
+
+  // Requirement 7: Continuous infinite auto-scroll with pause on hold and manual drag
+  useEffect(() => {
+    const container = carouselRef.current;
+    if (!container) return;
+
+    let animId: number;
+    const scrollSpeed = 0.8; // Smooth 60fps marquee speed
+
+    const loop = () => {
+      if (container && !isPausedRef.current) {
+        container.scrollLeft += scrollSpeed;
+        const singleChunkWidth = container.scrollWidth / 3;
+        if (container.scrollLeft >= singleChunkWidth * 2) {
+          container.scrollLeft -= singleChunkWidth;
+        } else if (container.scrollLeft <= 2) {
+          container.scrollLeft += singleChunkWidth;
+        }
+      }
+      animId = requestAnimationFrame(loop);
+    };
+
+    animId = requestAnimationFrame(loop);
+
+    return () => {
+      cancelAnimationFrame(animId);
+    };
+  }, [recipient.teamLetters]);
+
+  // Tripled list for seamless infinite wrapping
+  const infiniteTeamLetters = [
+    ...recipient.teamLetters,
+    ...recipient.teamLetters,
+    ...recipient.teamLetters,
+  ];
 
   return (
     <>
@@ -94,7 +133,7 @@ export default function Story({ recipient, onReadAgain, onNextChapter }: StoryPr
         </div>
       </section>
 
-      {/* Chapter 03: Pesan dari Tim Komnasinfo (Team Letters) */}
+      {/* Chapter 03: Pesan dari Tim Komnasinfo (Continuous Infinite Auto-Scroll) */}
       <section
         id="team-section"
         data-chapter="03"
@@ -107,9 +146,20 @@ export default function Story({ recipient, onReadAgain, onNextChapter }: StoryPr
             Dari <em>Komnasinfo</em>
           </h2>
 
-          {/* Horizontal swipe card slider to guarantee single viewport height */}
-          <div className="team-carousel" role="region" aria-label="Daftar pesan tim">
-            {recipient.teamLetters.map((msg: TeamMemberMessage, index: number) => (
+          {/* Continuous Infinite Auto-Scroll with Pause on Hold & Touch Swipe */}
+          <div
+            ref={carouselRef}
+            className={`team-carousel ${isCarouselPaused ? 'is-paused' : 'is-scrolling'}`}
+            role="region"
+            aria-label="Daftar pesan tim bersambung tanpa batas"
+            onTouchStart={() => setIsCarouselPaused(true)}
+            onTouchEnd={() => setIsCarouselPaused(false)}
+            onMouseDown={() => setIsCarouselPaused(true)}
+            onMouseUp={() => setIsCarouselPaused(false)}
+            onMouseEnter={() => setIsCarouselPaused(true)}
+            onMouseLeave={() => setIsCarouselPaused(false)}
+          >
+            {infiniteTeamLetters.map((msg: TeamMemberMessage, index: number) => (
               <div
                 key={index}
                 className="team-card"
@@ -128,7 +178,7 @@ export default function Story({ recipient, onReadAgain, onNextChapter }: StoryPr
             ))}
           </div>
 
-          <p className="carousel-hint">&larr; Geser untuk melihat pesan lainnya &rarr;</p>
+          <p className="carousel-hint">Tahan layar untuk berhenti &bull; Geser manual kapan saja</p>
 
           <div className="chapter-action-wrap">
             <button
@@ -156,7 +206,7 @@ export default function Story({ recipient, onReadAgain, onNextChapter }: StoryPr
             Momen <em>Berharga</em>
           </h2>
 
-          {/* Horizontal swipe photo gallery to prevent vertical overflow */}
+          {/* Horizontal swipe photo gallery */}
           <div className="photo-carousel" role="region" aria-label="Galeri foto kenangan">
             {recipient.memories.map((photo: MemoryPhoto, index: number) => (
               <figure key={index} className="photo-card" data-testid="photo-card">

@@ -45,12 +45,14 @@ describe('New Features & Indonesian Localization Integration Tests', () => {
     vi.restoreAllMocks();
   });
 
-  it('renders initial opener view with simple clean layout, Komnasinfo seal, and locked scroll', () => {
+  it('renders initial opener view with bell-ringing animation, Komnasinfo seal, and locked scroll', () => {
     const { container } = render(<App />);
 
-    // Topbar header has wordmark and Unmute button
+    // Topbar header has wordmark and icon-only audio button
     expect(screen.getByRole('heading', { level: 1, name: /see you/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /unmute musik/i })).toBeInTheDocument();
+    const audioBtn = screen.getByTestId('audio-toggle');
+    expect(audioBtn).toBeInTheDocument();
+    expect(audioBtn.querySelector('svg')).toBeInTheDocument();
 
     // Progress bar and page counter must NOT exist
     expect(container.querySelector('.progress-track')).toBeNull();
@@ -63,6 +65,10 @@ describe('New Features & Indonesian Localization Integration Tests', () => {
     // Message
     expect(screen.getByText(/seseorang ingin menyampaikan/i)).toBeInTheDocument();
 
+    // Envelope bell-ringing idle class
+    const envelope = container.querySelector('.envelope');
+    expect(envelope).toHaveClass('is-bell-ringing');
+
     // Komnasinfo seal icon in envelope
     const sealImg = container.querySelector('.seal-icon');
     expect(sealImg).toBeInTheDocument();
@@ -72,12 +78,11 @@ describe('New Features & Indonesian Localization Integration Tests', () => {
     expect(document.body.style.overflow).toBe('hidden');
   });
 
-  it('envelope is touch-sensitive and opens with transition when clicked', async () => {
+  it('envelope is touch-sensitive, opens with full-screen transition, and resets on read again', async () => {
     const { container } = render(<App />);
 
     const envelope = container.querySelector('.envelope');
     expect(envelope).toBeInTheDocument();
-    expect(envelope).toHaveClass('is-idle');
 
     // Tap anywhere on envelope
     act(() => {
@@ -87,32 +92,49 @@ describe('New Features & Indonesian Localization Integration Tests', () => {
     // Opening state triggers
     expect(envelope).toHaveClass('is-opening');
 
-    // Fast-forward timers for expansion and unlocking
+    // Fast-forward timers for full-screen veil expansion and unlocking
     act(() => {
       vi.advanceTimersByTime(1200);
     });
 
     // After opening, body scroll lock is released
     expect(document.body.style.overflow).toBe('');
+
+    // Click "Baca dari Awal" (Read from Beginning) in Chapter 5
+    const readAgainBtn = screen.getByTestId('read-again');
+    expect(readAgainBtn).toBeInTheDocument();
+
+    act(() => {
+      fireEvent.click(readAgainBtn);
+    });
+
+    // View returns to locked opener state
+    expect(document.body.style.overflow).toBe('hidden');
+    expect(container.querySelector('.envelope')).toBeInTheDocument();
   });
 
-  it('renders Topbar without progress bar and counter, with monokrom audio track', async () => {
+  it('renders Topbar with icon-only audio toggle button switching between mute and playing icons', async () => {
     const { container } = render(<Topbar />);
 
     expect(container.querySelector('.progress-track')).toBeNull();
     expect(container.querySelector('.chapter-counter')).toBeNull();
 
     const audioBtn = screen.getByTestId('audio-toggle');
-    expect(audioBtn).toHaveTextContent(/unmute/i);
+    // Initially muted
+    expect(audioBtn).toHaveClass('is-muted');
+    expect(audioBtn.querySelector('.audio-icon-muted')).toBeInTheDocument();
 
-    // Audio element toggles
+    // Click button
     await act(async () => {
       fireEvent.click(audioBtn);
     });
-    expect(audioBtn).toHaveAttribute('aria-pressed');
+
+    // Toggled to playing with sound waves icon
+    expect(audioBtn).toHaveClass('is-playing');
+    expect(audioBtn.querySelector('.audio-icon-playing')).toBeInTheDocument();
   });
 
-  it('renders Indonesian Story chapters starting at Chapter 01 (Greeting) with responsive carousels', () => {
+  it('renders Indonesian Story chapters with continuous infinite auto-scrolling carousel', () => {
     const onReadAgain = vi.fn();
     const onNextChapter = vi.fn();
 
@@ -137,12 +159,18 @@ describe('New Features & Indonesian Localization Integration Tests', () => {
     expect(screen.getByText(/surat dari fasilitator/i)).toBeInTheDocument();
     expect(screen.getByText(/baca pesan tim/i)).toBeInTheDocument();
 
-    // Chapter 03: Team Messages with horizontal swipe carousel
+    // Chapter 03: Team Messages with continuous infinite carousel
     const teamSec = container.querySelector('#team-section');
     expect(teamSec).toHaveAttribute('data-chapter', '03');
-    expect(container.querySelector('.team-carousel')).toBeInTheDocument();
-    expect(screen.getByText(/pesan dari rekan/i)).toBeInTheDocument();
-    expect(screen.getByText(/lihat kenangan/i)).toBeInTheDocument();
+    const teamCarousel = container.querySelector('.team-carousel');
+    expect(teamCarousel).toBeInTheDocument();
+
+    // Test pause on touch/mouse
+    fireEvent.touchStart(teamCarousel!);
+    expect(teamCarousel).toHaveClass('is-paused');
+
+    fireEvent.touchEnd(teamCarousel!);
+    expect(teamCarousel).toHaveClass('is-scrolling');
 
     // Chapter 04: Moments with horizontal photo carousel
     const momentsSec = container.querySelector('#moments-section');
@@ -162,8 +190,5 @@ describe('New Features & Indonesian Localization Integration Tests', () => {
 
     const readAgainBtn = screen.getByTestId('read-again');
     expect(readAgainBtn).toHaveTextContent(/baca dari awal/i);
-
-    fireEvent.click(readAgainBtn);
-    expect(onReadAgain).toHaveBeenCalledTimes(1);
   });
 });

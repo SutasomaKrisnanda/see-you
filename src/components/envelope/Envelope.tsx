@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import logoKomnasUrl from '@/assets/icons/Logo Komnas.svg';
 
 interface EnvelopeProps {
   recipientName: string;
@@ -11,13 +12,20 @@ export default function Envelope({ recipientName, isOpened, onOpen }: EnvelopePr
     isOpened ? 'done' : 'idle'
   );
 
+  // When reset from parent (e.g. "Baca dari Awal"), return to locked idle state
+  useEffect(() => {
+    if (!isOpened) {
+      setOpeningPhase('idle');
+    }
+  }, [isOpened]);
+
   const handleTriggerOpen = () => {
     if (openingPhase !== 'idle') return;
     setOpeningPhase('opening');
 
-    // Phase 1: Flap flips open & letter card slides out (0 - 450ms)
+    // Phase 1: Flap flips open & letter slides up (450ms)
     setTimeout(() => {
-      // Phase 2: Letter card expands to fill the full viewport (450ms - 950ms)
+      // Phase 2: Letter card expands to fill the entire viewport width & height (450ms - 1050ms)
       setOpeningPhase('expanding');
     }, 450);
 
@@ -25,7 +33,7 @@ export default function Envelope({ recipientName, isOpened, onOpen }: EnvelopePr
       // Phase 3: Transition complete, unlock story view
       setOpeningPhase('done');
       onOpen();
-    }, 950);
+    }, 1050);
   };
 
   // If already opened and dismissed, do not render to avoid interfering with scrolling
@@ -47,9 +55,9 @@ export default function Envelope({ recipientName, isOpened, onOpen }: EnvelopePr
           {recipientName}
         </div>
 
-        {/* Interactive Envelope with Idle Sway & Lift */}
+        {/* Interactive Envelope with Bell Ringing & 2-Second Pause */}
         <div
-          className={`envelope ${openingPhase === 'idle' ? 'is-idle' : ''} ${
+          className={`envelope ${openingPhase === 'idle' ? 'is-bell-ringing' : ''} ${
             openingPhase !== 'idle' ? 'is-opening' : ''
           }`}
           data-state={openingPhase}
@@ -66,17 +74,16 @@ export default function Envelope({ recipientName, isOpened, onOpen }: EnvelopePr
         >
           <div className="envelope-back" />
 
-          {/* Letter Card that slides out and expands */}
+          {/* Letter Card that slides out and expands to fill entire viewport */}
           <div
-            className={`envelope-letter ${openingPhase === 'expanding' ? 'is-expanded' : ''}`}
+            className={`envelope-letter ${openingPhase === 'expanding' ? 'is-full-viewport' : ''}`}
             style={{
               transform:
-                openingPhase === 'expanding'
-                  ? 'scale(3.5) translateY(-50px)'
-                  : openingPhase === 'opening'
-                    ? 'translateY(-75px)'
+                openingPhase === 'opening'
+                  ? 'translateY(-75px)'
+                  : openingPhase === 'expanding'
+                    ? 'none'
                     : 'none',
-              opacity: openingPhase === 'expanding' ? 0.95 : 1,
             }}
           >
             <span>See You</span>
@@ -103,11 +110,12 @@ export default function Envelope({ recipientName, isOpened, onOpen }: EnvelopePr
             disabled={openingPhase !== 'idle'}
           >
             <img
-              src="/see-you/assets/icons/logo-komnas.svg"
+              src={logoKomnasUrl}
               alt="Logo Komnas"
               className="seal-icon"
               onError={(e) => {
-                e.currentTarget.src = '/assets/icons/logo-komnas.svg';
+                // If local path resolution differs, fall back to public asset
+                e.currentTarget.src = '/see-you/assets/icons/logo-komnas.svg';
               }}
             />
           </button>
@@ -122,9 +130,13 @@ export default function Envelope({ recipientName, isOpened, onOpen }: EnvelopePr
         </p>
       </div>
 
-      {/* Full-screen expanding white/ivory backdrop transition */}
+      {/* Full-screen expanding white/ivory backdrop covering full width and height */}
       {openingPhase === 'expanding' && (
-        <div className="opening-transition-veil" aria-hidden="true" />
+        <div className="opening-transition-veil is-full-screen" aria-hidden="true">
+          <div className="veil-letter-card">
+            <span>See You</span>
+          </div>
+        </div>
       )}
     </section>
   );

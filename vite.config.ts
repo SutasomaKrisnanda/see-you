@@ -3,14 +3,17 @@ import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import path from 'node:path';
 
-// export default defineConfig({
-//   base: '/see-you/',
-export default defineConfig(({ command }) => ({
-  base: command === 'serve' ? '/' : '/see-you/',
+export default defineConfig({
+  base: '/see-you/',
   plugins: [react()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+    },
+  },
+  server: {
+    watch: {
+      usePolling: true,
     },
   },
   test: {
@@ -20,4 +23,4 @@ export default defineConfig(({ command }) => ({
     include: ['src/**/*.{test,spec}.{ts,tsx}'],
     css: true,
   },
-}));
+});
