@@ -69,8 +69,7 @@ export const RECIPIENT_SEBAS: RecipientData = {
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#29382F",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Fisah belum diisi.]",
+      message: "Halo, terima kasih sudah magang di komnasinfo, semoga komnasinfo menjadi pilihan pertama kalian saat daftar HMJ nantinya",
     },
     {
       sender: "Alvin",
@@ -180,8 +179,7 @@ export const RECIPIENT_KIA: RecipientData = {
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#29382F",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Fisah belum diisi.]",
+      message: "Halo, terima kasih sudah magang di komnasinfo, semoga komnasinfo menjadi pilihan pertama kalian saat daftar HMJ nantinya",
     },
     {
       sender: "Alvin",
@@ -290,8 +288,7 @@ export const RECIPIENT_HANIF: RecipientData = {
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#29382F",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Fisah belum diisi.]",
+      message: "Halo, terima kasih sudah magang di komnasinfo, semoga komnasinfo menjadi pilihan pertama kalian saat daftar HMJ nantinya",
     },
     {
       sender: "Alvin",
@@ -401,8 +398,7 @@ export const RECIPIENT_ADI: RecipientData = {
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#29382F",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Fisah belum diisi.]",
+      message: "Halo, terima kasih sudah magang di komnasinfo, semoga komnasinfo menjadi pilihan pertama kalian saat daftar HMJ nantinya",
     },
     {
       sender: "Alvin",
@@ -437,7 +433,6 @@ export const RECIPIENT_ADI: RecipientData = {
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#29382F",
-      // TODO: Replace this placeholder with the sender's approved message.
       message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Kia belum diisi.]",
     },
     {
@@ -513,8 +508,7 @@ export const RECIPIENT_NITA: RecipientData = {
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#29382F",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Fisah belum diisi.]",
+      message: "Halo, terima kasih sudah magang di komnasinfo, semoga komnasinfo menjadi pilihan pertama kalian saat daftar HMJ nantinya",
     },
     {
       sender: "Alvin",
@@ -624,8 +618,7 @@ export const RECIPIENT_YOGA: RecipientData = {
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#29382F",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Fisah belum diisi.]",
+      message: "Halo, terima kasih sudah magang di komnasinfo, semoga komnasinfo menjadi pilihan pertama kalian saat daftar HMJ nantinya",
     },
     {
       sender: "Alvin",
@@ -735,8 +728,7 @@ export const RECIPIENT_WAH_ANGGA: RecipientData = {
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#29382F",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Fisah belum diisi.]",
+      message: "Halo, terima kasih sudah magang di komnasinfo, semoga komnasinfo menjadi pilihan pertama kalian saat daftar HMJ nantinya",
     },
     {
       sender: "Alvin",
@@ -771,7 +763,6 @@ export const RECIPIENT_WAH_ANGGA: RecipientData = {
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#29382F",
-      // TODO: Replace this placeholder with the sender's approved message.
       message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Kia belum diisi.]",
     },
     {
