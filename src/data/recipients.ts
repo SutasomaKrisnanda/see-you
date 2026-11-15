@@ -7,10 +7,10 @@
  */
 
 import type { RecipientData, MemoryPhoto } from './types';
-import memDsc1909 from '@/assets/images/memory/DSC01909.webp';
-import memS6234123 from '@/assets/images/memory/S__6234123.webp';
-import memLineAlbum from '@/assets/images/memory/LINE_ALBUM_Say HI MAU 24 October 2026_261115_1.webp';
-import memDsc1885 from '@/assets/images/memory/DSC01885.webp';
+import memDsc1909 from '@/assets/images/memory/foto-bersama.webp';
+import memS6234123 from '@/assets/images/memory/boothcamp.webp';
+import memLineAlbum from '@/assets/images/memory/say-hi.webp';
+import memDsc1885 from '@/assets/images/memory/say-hello.webp';
 
 export const DEFAULT_MEMORIES: MemoryPhoto[] = [
   {
