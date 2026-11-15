@@ -77,72 +77,63 @@ export const RECIPIENT_SEBAS: RecipientData = {
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#687B61",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Alvin belum diisi.]",
+      message: "Makasi yah sudah datang di See You. Semangat besok UB-nya",
     },
     {
       sender: "Nanda",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#D9C8A5",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Nanda belum diisi.]",
+      message: "Semangat selalu adik adik semua, semoga happy selalu!",
     },
     {
       sender: "Davin",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#A8B5A0",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Davin belum diisi.]",
+      message: "Komnasinfo gacor!",
     },
     {
       sender: "Tara",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#C7D5C1",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Tara belum diisi.]",
+      message: "Makasi yah, kalian sudah mau magang sama HMJ dibanding pilihan lainnya yang gak kalah keren. Good Luck UB-nya besok ya. Semoga 100.",
     },
     {
       sender: "Kia",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#29382F",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Kia belum diisi.]",
+      message: "Hai Sebas! Terima kasih sudah magang di komnasinfo, selalu top skor ub yach^^",
     },
     {
       sender: "Ary",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#687B61",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Ary belum diisi.]",
+      message: "haii terimakasih sudah mau bergabung bersama komansinfo,semangat meneruskan perjuangan <3",
     },
     {
       sender: "William",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#D9C8A5",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari William belum diisi.]",
+      message: "haloo, terima kasih sudah mau bergabung bersama komnasinfo. jangan lupa tetap semangat terus yaa buat kedepannya.. selamat menjadi pdd abadi",
     },
     {
       sender: "Natha",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#A8B5A0",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Natha belum diisi.]",
+      message: "bro, sehat selalu ya, terima kasih sudah mau stay di hmj dan mengikuti magang dengan baik, kakak berdoa semoga sehat selalu, makan jangan telat, tidur teratur, hidup aman tentram ye. Feel free for ask kating about anything. jangan menyerah semangat sukses.",
     },
     {
       sender: "Zahra",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#C7D5C1",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Zahra belum diisi.]",
+      message: "Thank you guys, sudah mau gabung di magang komnasinfo 🫰🏻",
     },
   ],
   memories: DEFAULT_MEMORIES,
@@ -197,72 +188,63 @@ export const RECIPIENT_KIA: RecipientData = {
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#687B61",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Alvin belum diisi.]",
+      message: "Makasi yah sudah datang di See You. Semangat besok UB-nya",
     },
     {
       sender: "Nanda",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#D9C8A5",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Nanda belum diisi.]",
+      message: "Semangat selalu adik adik semua, semoga happy selalu!",
     },
     {
       sender: "Davin",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#A8B5A0",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Davin belum diisi.]",
+      message: "Komnasinfo gacor!",
     },
     {
       sender: "Tara",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#C7D5C1",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Tara belum diisi.]",
+      message: "Makasi yah, kalian sudah mau magang sama HMJ dibanding pilihan lainnya yang gak kalah keren. Good Luck UB-nya besok ya. Semoga 100.",
     },
     {
       sender: "Kia",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#29382F",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Kia belum diisi.]",
+      message: "HAII KEMBARANKUUUU, terima kasih ya sudah magang komnasinfoo.  Sehat selalu, ub no remed, dan kita gacorkan komnas dengan 2 kia",
     },
     {
       sender: "Ary",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#687B61",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Ary belum diisi.]",
+      message: "haii terimakasih sudah mau bergabung bersama komansinfo,semangat meneruskan perjuangan <3",
     },
     {
       sender: "William",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#D9C8A5",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari William belum diisi.]",
+      message: "haloo, terima kasih sudah mau bergabung bersama komnasinfo. jangan lupa tetap semangat terus yaa buat kedepannya.. selamat menjadi pdd abadi",
     },
     {
       sender: "Natha",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#A8B5A0",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Natha belum diisi.]",
+      message: "bro, sehat selalu ya, terima kasih sudah mau stay di hmj dan mengikuti magang dengan baik, kakak berdoa semoga sehat selalu, makan jangan telat, tidur teratur, hidup aman tentram ye. Feel free for ask kating about anything. jangan menyerah semangat sukses.",
     },
     {
       sender: "Zahra",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#C7D5C1",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Zahra belum diisi.]",
+      message: "Thank you guys, sudah mau gabung di magang komnasinfo 🫰🏻",
     },
   ],
   memories: DEFAULT_MEMORIES,
@@ -316,72 +298,63 @@ export const RECIPIENT_HANIF: RecipientData = {
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#687B61",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Alvin belum diisi.]",
+      message: "Makasi yah sudah datang di See You. Semangat besok UB-nya",
     },
     {
       sender: "Nanda",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#D9C8A5",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Nanda belum diisi.]",
+      message: "Semangat selalu adik adik semua, semoga happy selalu!",
     },
     {
       sender: "Davin",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#A8B5A0",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Davin belum diisi.]",
+      message: "Komnasinfo gacor!",
     },
     {
       sender: "Tara",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#C7D5C1",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Tara belum diisi.]",
+      message: "Makasi yah, kalian sudah mau magang sama HMJ dibanding pilihan lainnya yang gak kalah keren. Good Luck UB-nya besok ya. Semoga 100.",
     },
     {
       sender: "Kia",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#29382F",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Kia belum diisi.]",
+      message: "Hai Haniff, gacor banget selalu aktif di kegiatan magang\" ini. Terima kasih karena sudah tetep datang walaupun besok ub, lancar ya ubnya, lets go top score^^",
     },
     {
       sender: "Ary",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#687B61",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Ary belum diisi.]",
+      message: "haii terimakasih sudah mau bergabung bersama komansinfo,semangat meneruskan perjuangan <3",
     },
     {
       sender: "William",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#D9C8A5",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari William belum diisi.]",
+      message: "haloo, terima kasih sudah mau bergabung bersama komnasinfo. jangan lupa tetap semangat terus yaa buat kedepannya.. selamat menjadi pdd abadi",
     },
     {
       sender: "Natha",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#A8B5A0",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Natha belum diisi.]",
+      message: "bro, sehat selalu ya, terima kasih sudah mau stay di hmj dan mengikuti magang dengan baik, kakak berdoa semoga sehat selalu, makan jangan telat, tidur teratur, hidup aman tentram ye. Feel free for ask kating about anything. jangan menyerah semangat sukses.",
     },
     {
       sender: "Zahra",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#C7D5C1",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Zahra belum diisi.]",
+      message: "Thank you guys, sudah mau gabung di magang komnasinfo 🫰🏻",
     },
   ],
   memories: DEFAULT_MEMORIES,
@@ -436,32 +409,28 @@ export const RECIPIENT_ADI: RecipientData = {
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#687B61",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Alvin belum diisi.]",
+      message: "Makasi yah sudah datang di See You. Semangat besok UB-nya",
     },
     {
       sender: "Nanda",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#D9C8A5",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Nanda belum diisi.]",
+      message: "Semangat selalu adik adik semua, semoga happy selalu!",
     },
     {
       sender: "Davin",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#A8B5A0",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Davin belum diisi.]",
+      message: "Komnasinfo gacor!",
     },
     {
       sender: "Tara",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#C7D5C1",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Tara belum diisi.]",
+      message: "Makasi yah, kalian sudah mau magang sama HMJ dibanding pilihan lainnya yang gak kalah keren. Good Luck UB-nya besok ya. Semoga 100.",
     },
     {
       sender: "Kia",
@@ -476,32 +445,28 @@ export const RECIPIENT_ADI: RecipientData = {
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#687B61",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Ary belum diisi.]",
+      message: "haii terimakasih sudah mau bergabung bersama komansinfo,semangat meneruskan perjuangan <3",
     },
     {
       sender: "William",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#D9C8A5",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari William belum diisi.]",
+      message: "haloo, terima kasih sudah mau bergabung bersama komnasinfo. jangan lupa tetap semangat terus yaa buat kedepannya.. selamat menjadi pdd abadi",
     },
     {
       sender: "Natha",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#A8B5A0",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Natha belum diisi.]",
+      message: "bro, sehat selalu ya, terima kasih sudah mau stay di hmj dan mengikuti magang dengan baik, kakak berdoa semoga sehat selalu, makan jangan telat, tidur teratur, hidup aman tentram ye. Feel free for ask kating about anything. jangan menyerah semangat sukses.",
     },
     {
       sender: "Zahra",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#C7D5C1",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Zahra belum diisi.]",
+      message: "Thank you guys, sudah mau gabung di magang komnasinfo 🫰🏻",
     },
   ],
   memories: DEFAULT_MEMORIES,
@@ -556,72 +521,63 @@ export const RECIPIENT_NITA: RecipientData = {
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#687B61",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Alvin belum diisi.]",
+      message: "Makasi yah sudah datang di See You. Semangat besok UB-nya",
     },
     {
       sender: "Nanda",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#D9C8A5",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Nanda belum diisi.]",
+      message: "Semangat selalu adik adik semua, semoga happy selalu!",
     },
     {
       sender: "Davin",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#A8B5A0",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Davin belum diisi.]",
+      message: "Komnasinfo gacor!",
     },
     {
       sender: "Tara",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#C7D5C1",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Tara belum diisi.]",
+      message: "Makasi yah, kalian sudah mau magang sama HMJ dibanding pilihan lainnya yang gak kalah keren. Good Luck UB-nya besok ya. Semoga 100.",
     },
     {
       sender: "Kia",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#29382F",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Kia belum diisi.]",
+      message: "Halo cintaaa, terima kasih ya sudah magang di komnas. Ga nyangka ternyata kamu anaknya asik bangett, senang bisa kenal lebih dekat setelah adrenal\" ituu. Semangat selalu, lancar ya ubnya, lets go top score^^",
     },
     {
       sender: "Ary",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#687B61",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Ary belum diisi.]",
+      message: "haii terimakasih sudah mau bergabung bersama komansinfo,semangat meneruskan perjuangan <3",
     },
     {
       sender: "William",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#D9C8A5",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari William belum diisi.]",
+      message: "haloo, terima kasih sudah mau bergabung bersama komnasinfo. jangan lupa tetap semangat terus yaa buat kedepannya.. selamat menjadi pdd abadi",
     },
     {
       sender: "Natha",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#A8B5A0",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Natha belum diisi.]",
+      message: "bro, sehat selalu ya, terima kasih sudah mau stay di hmj dan mengikuti magang dengan baik, kakak berdoa semoga sehat selalu, makan jangan telat, tidur teratur, hidup aman tentram ye. Feel free for ask kating about anything. jangan menyerah semangat sukses.",
     },
     {
       sender: "Zahra",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#C7D5C1",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Zahra belum diisi.]",
+      message: "Thank you guys, sudah mau gabung di magang komnasinfo 🫰🏻",
     },
   ],
   memories: DEFAULT_MEMORIES,
@@ -676,72 +632,63 @@ export const RECIPIENT_YOGA: RecipientData = {
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#687B61",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Alvin belum diisi.]",
+      message: "Makasi yah sudah datang di See You. Semangat besok UB-nya",
     },
     {
       sender: "Nanda",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#D9C8A5",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Nanda belum diisi.]",
+      message: "Semangat selalu adik adik semua, semoga happy selalu!",
     },
     {
       sender: "Davin",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#A8B5A0",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Davin belum diisi.]",
+      message: "Komnasinfo gacor!",
     },
     {
       sender: "Tara",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#C7D5C1",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Tara belum diisi.]",
+      message: "Makasi yah, kalian sudah mau magang sama HMJ dibanding pilihan lainnya yang gak kalah keren. Good Luck UB-nya besok ya. Semoga 100.",
     },
     {
       sender: "Kia",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#29382F",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Kia belum diisi.]",
+      message: "Hai Yoga, dah espek calon pdd/komnas dari penugasan cranialnya. Terima kasih ya sudah magang komnasinfo, sehat selalu dan lancar lancar ubnya, lesgo top score^^",
     },
     {
       sender: "Ary",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#687B61",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Ary belum diisi.]",
+      message: "haii terimakasih sudah mau bergabung bersama komansinfo,semangat meneruskan perjuangan <3",
     },
     {
       sender: "William",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#D9C8A5",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari William belum diisi.]",
+      message: "haloo, terima kasih sudah mau bergabung bersama komnasinfo. jangan lupa tetap semangat terus yaa buat kedepannya.. selamat menjadi pdd abadi",
     },
     {
       sender: "Natha",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#A8B5A0",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Natha belum diisi.]",
+      message: "bro, sehat selalu ya, terima kasih sudah mau stay di hmj dan mengikuti magang dengan baik, kakak berdoa semoga sehat selalu, makan jangan telat, tidur teratur, hidup aman tentram ye. Feel free for ask kating about anything. jangan menyerah semangat sukses.",
     },
     {
       sender: "Zahra",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#C7D5C1",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Zahra belum diisi.]",
+      message: "Thank you guys, sudah mau gabung di magang komnasinfo 🫰🏻",
     },
   ],
   memories: DEFAULT_MEMORIES,
@@ -796,32 +743,28 @@ export const RECIPIENT_WAH_ANGGA: RecipientData = {
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#687B61",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Alvin belum diisi.]",
+      message: "Makasi yah sudah datang di See You. Semangat besok UB-nya",
     },
     {
       sender: "Nanda",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#D9C8A5",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Nanda belum diisi.]",
+      message: "Semangat selalu adik adik semua, semoga happy selalu!",
     },
     {
       sender: "Davin",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#A8B5A0",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Davin belum diisi.]",
+      message: "Komnasinfo gacor!",
     },
     {
       sender: "Tara",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#C7D5C1",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Tara belum diisi.]",
+      message: "Makasi yah, kalian sudah mau magang sama HMJ dibanding pilihan lainnya yang gak kalah keren. Good Luck UB-nya besok ya. Semoga 100.",
     },
     {
       sender: "Kia",
@@ -836,32 +779,28 @@ export const RECIPIENT_WAH_ANGGA: RecipientData = {
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#687B61",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Ary belum diisi.]",
+      message: "haii terimakasih sudah mau bergabung bersama komansinfo,semangat meneruskan perjuangan <3",
     },
     {
       sender: "William",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#D9C8A5",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari William belum diisi.]",
+      message: "haloo, terima kasih sudah mau bergabung bersama komnasinfo. jangan lupa tetap semangat terus yaa buat kedepannya.. selamat menjadi pdd abadi",
     },
     {
       sender: "Natha",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#A8B5A0",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Natha belum diisi.]",
+      message: "bro, sehat selalu ya, terima kasih sudah mau stay di hmj dan mengikuti magang dengan baik, kakak berdoa semoga sehat selalu, makan jangan telat, tidur teratur, hidup aman tentram ye. Feel free for ask kating about anything. jangan menyerah semangat sukses.",
     },
     {
       sender: "Zahra",
       role: "Anggota Chronicle",
       avatar: null,
       accent: "#C7D5C1",
-      // TODO: Replace this placeholder with the sender's approved message.
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Pesan dari Zahra belum diisi.]",
+      message: "Thank you guys, sudah mau gabung di magang komnasinfo 🫰🏻",
     },
   ],
   memories: DEFAULT_MEMORIES,
