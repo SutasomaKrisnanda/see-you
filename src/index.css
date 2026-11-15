@@ -175,6 +175,11 @@ button:focus-visible {
   transform: translateY(-20px);
 }
 
+.opener-layer.is-fading {
+  background: transparent !important;
+  pointer-events: none;
+}
+
 .opener-inner {
   width: 100%;
   max-width: 440px;
@@ -313,6 +318,7 @@ button:focus-visible {
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   transform-origin: top center;
+  perspective: 1000px;
 }
 
 .envelope.is-bell-ringing {
@@ -346,7 +352,7 @@ button:focus-visible {
   font-style: italic;
   color: var(--olive);
   font-size: 22px;
-  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease;
+  transition: transform 1.0s cubic-bezier(0.25, 1, 0.5, 1) 0.35s, opacity 0.4s ease;
   box-shadow: 0 4px 12px rgba(41, 56, 47, 0.08);
   z-index: 2;
 }
@@ -362,6 +368,7 @@ button:focus-visible {
   clip-path: polygon(0 0, 50% 55%, 100% 0, 100% 100%, 0 100%);
   border-radius: 4px;
   z-index: 3;
+  pointer-events: none;
 }
 
 .envelope-flap {
@@ -370,15 +377,17 @@ button:focus-visible {
   background: #d4c8ad;
   clip-path: polygon(0 0, 100% 0, 50% 58%);
   transform-origin: top;
-  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  backface-visibility: visible;
   z-index: 4;
 }
 
-/* When opening or opened, the flap flips backward and drops behind the letter */
+/* When opening, the flap flips backward and drops behind the letter after passing 90deg (~0.35s) */
 .envelope.is-opening .envelope-flap,
 .opener-layer.is-opening .envelope-flap,
 .opener-layer.is-expanding .envelope-flap {
   z-index: 1;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), z-index 0s 0.35s;
 }
 
 /* Requirement 1: Wax Seal with Komnasinfo Logo filling full button with no border */
@@ -441,7 +450,7 @@ button:focus-visible {
 }
 
 .opening-transition-veil.is-visible {
-  animation: veil-fullscreen-expand 0.45s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation: veil-fade-in 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
   opacity: 1;
 }
 
@@ -458,14 +467,12 @@ button:focus-visible {
   animation: letter-peaceful-in 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
-@keyframes veil-fullscreen-expand {
+@keyframes veil-fade-in {
   0% {
     opacity: 0;
-    clip-path: inset(28% 18% 32% 18% round 8px);
   }
   100% {
     opacity: 1;
-    clip-path: inset(0 0 0 0 round 0);
   }
 }
 

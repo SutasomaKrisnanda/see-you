@@ -32,23 +32,26 @@ export default function Envelope({ recipientName, isOpened, onOpen, flower }: En
     if (openingPhase !== 'idle') return;
     setOpeningPhase('opening');
 
-    // Phase 1: Flap flips open & letter rises up gently (500ms)
+    // Phase 1: Flap flips open & letter rises up gently for 1.5s (1500ms)
     setTimeout(() => {
-      // Phase 2: Letter card expands to full viewport with "See You".
-      // Simultaneously unmount/remove all envelope elements and unlock story view
+      // Phase 2: Fade in the white "See You" veil over the opened envelope
       setOpeningPhase('expanding');
-      onOpen();
-    }, 500);
-
-    // Phase 3: Display "See You" for exactly 1 second (500ms + 1000ms = 1500ms)
-    setTimeout(() => {
-      setOpeningPhase('fading');
     }, 1500);
 
-    // Phase 4: Complete transition after veil fades out (1500ms + 700ms = 2200ms)
+    // Phase 2.5: Once veil is fully opaque white (1500ms + 400ms = 1900ms), unlock story behind it
+    setTimeout(() => {
+      onOpen();
+    }, 1900);
+
+    // Phase 3: Hold "See You" on white screen, then fade out veil at 2500ms to reveal Greeting directly
+    setTimeout(() => {
+      setOpeningPhase('fading');
+    }, 2500);
+
+    // Phase 4: Veil is completely transparent by 3100ms; cleanly unmount opener layer
     setTimeout(() => {
       setOpeningPhase('done');
-    }, 2200);
+    }, 3100);
   };
 
   // If already opened and dismissed, do not render to avoid interfering with scrolling
@@ -56,8 +59,10 @@ export default function Envelope({ recipientName, isOpened, onOpen, flower }: En
     return null;
   }
 
-  // When "See You" veil appears, all previous envelope elements are immediately removed
-  const showEnvelopeElements = openingPhase === 'idle' || openingPhase === 'opening';
+  // Only show the envelope elements during 'idle', 'opening', and 'expanding'.
+  // Once screen is white and fading out to story, envelope elements are hidden so they never re-appear!
+  const showEnvelopeElements =
+    openingPhase === 'idle' || openingPhase === 'opening' || openingPhase === 'expanding';
 
   return (
     <section
@@ -120,7 +125,7 @@ export default function Envelope({ recipientName, isOpened, onOpen, flower }: En
                 className="envelope-letter"
                 style={{
                   transform:
-                    openingPhase === 'opening'
+                    openingPhase !== 'idle'
                       ? 'translateY(-85px)'
                       : 'none',
                 }}

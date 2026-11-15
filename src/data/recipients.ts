@@ -151,7 +151,7 @@ export const RECIPIENT_SEBAS: RecipientData = {
     headline: 'Sampai jumpa di bab berikutnya.',
     message: "Semoga pengalaman selama di Chronicle menjadi bekal yang baik untuk perjalananmu selanjutnya. Terima kasih sudah pernah menjadi bagian dari cerita ini, Sebas.",
     sender: 'Komnasinfo & Chronicle',
-    period: 'Periode Magang Chronicle',
+    period: 'MAU HMJ Kedokteran 2026',
   },
 };
 
@@ -271,7 +271,7 @@ export const RECIPIENT_KIA: RecipientData = {
     headline: 'Sampai jumpa di bab berikutnya.',
     message: "Semoga pengalaman selama di Chronicle menjadi bekal yang baik untuk perjalananmu selanjutnya. Terima kasih sudah pernah menjadi bagian dari cerita ini, Kia.",
     sender: 'Komnasinfo & Chronicle',
-    period: 'Periode Magang Chronicle',
+    period: 'MAU HMJ Kedokteran 2026',
   },
 };
 
@@ -390,7 +390,7 @@ export const RECIPIENT_HANIF: RecipientData = {
     headline: 'Sampai jumpa di bab berikutnya.',
     message: "Semoga pengalaman selama di Chronicle menjadi bekal yang baik untuk perjalananmu selanjutnya. Terima kasih sudah pernah menjadi bagian dari cerita ini, Hanif.",
     sender: 'Komnasinfo & Chronicle',
-    period: 'Periode Magang Chronicle',
+    period: 'MAU HMJ Kedokteran 2026',
   },
 };
 
@@ -510,7 +510,7 @@ export const RECIPIENT_ADI: RecipientData = {
     headline: 'Sampai jumpa di bab berikutnya.',
     message: "Semoga pengalaman selama di Chronicle menjadi bekal yang baik untuk perjalananmu selanjutnya. Terima kasih sudah pernah menjadi bagian dari cerita ini, Adi.",
     sender: 'Komnasinfo & Chronicle',
-    period: 'Periode Magang Chronicle',
+    period: 'MAU HMJ Kedokteran 2026',
   },
 };
 
@@ -630,7 +630,7 @@ export const RECIPIENT_NITA: RecipientData = {
     headline: 'Sampai jumpa di bab berikutnya.',
     message: "Semoga pengalaman selama di Chronicle menjadi bekal yang baik untuk perjalananmu selanjutnya. Terima kasih sudah pernah menjadi bagian dari cerita ini, Nita.",
     sender: 'Komnasinfo & Chronicle',
-    period: 'Periode Magang Chronicle',
+    period: 'MAU HMJ Kedokteran 2026',
   },
 };
 
@@ -750,7 +750,7 @@ export const RECIPIENT_YOGA: RecipientData = {
     headline: 'Sampai jumpa di bab berikutnya.',
     message: "Semoga pengalaman selama di Chronicle menjadi bekal yang baik untuk perjalananmu selanjutnya. Terima kasih sudah pernah menjadi bagian dari cerita ini, Yoga.",
     sender: 'Komnasinfo & Chronicle',
-    period: 'Periode Magang Chronicle',
+    period: 'MAU HMJ Kedokteran 2026',
   },
 };
 
@@ -870,7 +870,7 @@ export const RECIPIENT_WAH_ANGGA: RecipientData = {
     headline: 'Sampai jumpa di bab berikutnya.',
     message: "Semoga pengalaman selama di Chronicle menjadi bekal yang baik untuk perjalananmu selanjutnya. Terima kasih sudah pernah menjadi bagian dari cerita ini, Wah Angga.",
     sender: 'Komnasinfo & Chronicle',
-    period: 'Periode Magang Chronicle',
+    period: 'MAU HMJ Kedokteran 2026',
   },
 };
 
